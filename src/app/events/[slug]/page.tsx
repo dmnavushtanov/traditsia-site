@@ -1,0 +1,1 @@
+// Individual event page - to be implemented 
