@@ -45,45 +45,7 @@ export default function GalleryPage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col min-h-screen bg-white text-gray-800">
-        {/* Header */}
-        <header className="bg-white shadow">
-          <div className="container mx-auto flex items-center justify-between py-4 px-6">
-            <div className="flex items-center space-x-4">
-              <Image
-                src="/images/gerb.jpg"
-                alt="Traditsia Logo"
-                width={50}
-                height={50}
-                className="h-12 w-12"
-              />
-              <span className="text-xl font-bold">
-                {t('organizationName')}
-              </span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <nav className="space-x-6">
-                {[
-                  { key: 'home', href: '' },
-                  { key: 'gallery', href: 'gallery' },
-                  { key: 'events', href: 'events' },
-                  { key: 'about', href: 'about' },
-                  { key: 'contact', href: 'contact' }
-                ].map((item) => (
-                  <Link
-                    key={item.key}
-                    href={`/${item.href}`}
-                    className="hover:text-gray-600"
-                  >
-                    {t(item.key as any)}
-                  </Link>
-                ))}
-              </nav>
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </header>
-
+      <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
         <div className="container mx-auto py-12">
           <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
           <div className="text-center">Loading albums...</div>
@@ -94,45 +56,7 @@ export default function GalleryPage() {
 
   if (error) {
     return (
-      <div className="flex flex-col min-h-screen bg-white text-gray-800">
-        {/* Header */}
-        <header className="bg-white shadow">
-          <div className="container mx-auto flex items-center justify-between py-4 px-6">
-            <div className="flex items-center space-x-4">
-              <Image
-                src="/images/gerb.jpg"
-                alt="Traditsia Logo"
-                width={50}
-                height={50}
-                className="h-12 w-12"
-              />
-              <span className="text-xl font-bold">
-                {t('organizationName')}
-              </span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <nav className="space-x-6">
-                {[
-                  { key: 'home', href: '' },
-                  { key: 'gallery', href: 'gallery' },
-                  { key: 'events', href: 'events' },
-                  { key: 'about', href: 'about' },
-                  { key: 'contact', href: 'contact' }
-                ].map((item) => (
-                  <Link
-                    key={item.key}
-                    href={`/${item.href}`}
-                    className="hover:text-gray-600"
-                  >
-                    {t(item.key as any)}
-                  </Link>
-                ))}
-              </nav>
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </header>
-
+      <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
         <div className="container mx-auto py-12">
           <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
           <div className="text-center text-red-600">
@@ -144,45 +68,7 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-gray-800">
-      {/* Header */}
-      <header className="bg-white shadow">
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
-          <div className="flex items-center space-x-4">
-            <Image
-              src="/images/gerb.jpg"
-              alt="Traditsia Logo"
-              width={50}
-              height={50}
-              className="h-12 w-12"
-            />
-            <span className="text-xl font-bold">
-              {t('organizationName')}
-            </span>
-          </div>
-          <div className="flex items-center space-x-6">
-            <nav className="space-x-6">
-              {[
-                { key: 'home', href: '' },
-                { key: 'gallery', href: 'gallery' },
-                { key: 'events', href: 'events' },
-                { key: 'about', href: 'about' },
-                { key: 'contact', href: 'contact' }
-              ].map((item) => (
-                <Link
-                  key={item.key}
-                  href={`/${item.href}`}
-                  className="hover:text-gray-600"
-                >
-                  {t(item.key as any)}
-                </Link>
-              ))}
-            </nav>
-            <LanguageSwitcher />
-          </div>
-        </div>
-      </header>
-
+    <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
       <div className="container mx-auto py-12 px-6">
         <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
         
@@ -196,7 +82,7 @@ export default function GalleryPage() {
               <Link
                 key={album.name}
                 href={`/gallery/${encodeURIComponent(album.name)}`}
-                className="block bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300"
+                className="block bg-[var(--background-soft-cream)] rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300"
                 onClick={(e) => {
                   console.log('Clicking on album:', album.name);
                   console.log('Navigating to:', `/gallery/${encodeURIComponent(album.name)}`);
@@ -218,7 +104,7 @@ export default function GalleryPage() {
                 </div>
                 <div className="p-4">
                   <h2 className="text-xl font-semibold mb-1">{album.name}</h2>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-[var(--text-charcoal)] text-sm">
                     {album.imageCount} {album.imageCount === 1 ? 'image' : 'images'}
                   </p>
                 </div>

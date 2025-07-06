@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="max-w-6xl mx-auto p-8">
+    <div className="max-w-6xl mx-auto p-8 text-[var(--text-charcoal)]">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <p className="text-lg mb-6">
         Get in touch with us to learn more about our work or to get involved.
@@ -34,7 +34,7 @@ export default function Contact() {
             ></textarea>
             <button 
               type="submit" 
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              className="bg-[var(--primary-accent-green)] text-white px-6 py-2 rounded hover:bg-[var(--secondary-accent-ochre)]"
             >
               Send Message
             </button>
