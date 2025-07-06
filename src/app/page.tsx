@@ -51,7 +51,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-64 md:h-96">
         <Image
-          src="/images/site-banner.jpg"
+          src="/images/site-banner.png"
           alt="Hero Image"
           fill
           className="object-cover"
