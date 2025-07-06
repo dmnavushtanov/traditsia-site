@@ -1,9 +1,9 @@
-
 import fs from 'fs/promises';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 
 export interface Event {
+  EventID: string;
   Title: string;
   Description: string;
   ImagePath: string;
@@ -15,34 +15,49 @@ export interface Event {
   slug: string;
 }
 
+export interface Branch {
+  Name: string;
+  City: string;
+  Head: string;
+  Phone?: string;
+  Email?: string;
+  Latitude: number;
+  Longitude: number;
+}
+
 const generateSlug = (title: string) => {
-  return title.toLowerCase().replace(/\s+/g, '-');
+  return title
+    .toLowerCase()
+    .replace(/[\s.,;:'"!?()„“”]+/g, '-') // Replace spaces and common punctuation with hyphens, including special quotes
+    .replace(/^-+|-+$/g, '') // Trim leading/trailing hyphens
+    .replace(/-+/g, '-'); // Collapse multiple hyphens
 };
 
-export async function getEvents(): Promise<Event[]> {
-  const csvPath = path.join(process.cwd(), 'src', 'content', 'events.csv');
+import { Language } from '@/lib/translations';
+
+export async function getEvents(locale: Language): Promise<Event[]> {
+  const csvFileName = locale === 'en' ? 'events.en.csv' : 'events.csv';
+  const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
   const content = await fs.readFile(csvPath, 'utf-8');
   const records = parse(content, {
+    delimiter: ';',
     columns: true,
     skip_empty_lines: true,
+    from_line: 2,
   });
 
   const allEvents: Event[] = records.map((record: any) => ({
     ...record,
-    Latitude: parseFloat(record.Latitude),
-    Longitude: parseFloat(record.Longitude),
+    EventID: record.EventID.padStart(5, '0'),
+    Latitude: parseFloat(record.Latitude) || 0,
+    Longitude: parseFloat(record.Longitude) || 0,
     slug: generateSlug(record.Title),
   }));
 
   const now = new Date();
-  now.setHours(0, 0, 0, 0); // Set to start of today for comparison
-  console.log("Current date (start of today):", now.toISOString());
+  now.setHours(0, 0, 0, 0);
 
-  const upcomingEvents = allEvents.filter(event => {
-    const eventDate = new Date(event.Date);
-    console.log(`Event: ${event.Title}, Raw Date: ${event.Date}, Parsed Date: ${eventDate.toISOString()}, Is Upcoming: ${eventDate >= now}`);
-    return eventDate >= now;
-  });
+  const upcomingEvents = allEvents;
 
   upcomingEvents.sort((a, b) => {
     const dateA = new Date(a.Date);
@@ -50,11 +65,32 @@ export async function getEvents(): Promise<Event[]> {
     return dateA.getTime() - dateB.getTime();
   });
 
-  console.log("Filtered upcoming events count:", upcomingEvents.length);
   return upcomingEvents;
 }
 
-export async function getEventBySlug(slug: string): Promise<Event | undefined> {
-  const events = await getEvents();
+export async function getEventBySlug(slug: string, locale: Language): Promise<Event | undefined> {
+  const events = await getEvents(locale);
   return events.find((event) => event.slug === slug);
+}
+
+import { Language } from '@/lib/translations';
+
+export async function getBranches(locale: Language): Promise<Branch[]> {
+  const csvFileName = locale === 'en' ? 'branches.en.csv' : 'branches.csv';
+  const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
+  const content = await fs.readFile(csvPath, 'utf-8');
+  const records = parse(content, {
+    columns: true,
+    skip_empty_lines: true,
+  });
+
+  const branches: Branch[] = records.map((record: any) => ({
+    ...record,
+    Latitude: parseFloat(record.Latitude),
+    Longitude: parseFloat(record.Longitude),
+  }));
+
+  branches.sort((a, b) => a.City.localeCompare(b.City));
+
+  return branches;
 }

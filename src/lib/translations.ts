@@ -6,6 +6,7 @@ export const translations = {
     events: "Events",
     about: "About",
     contact: "Contact",
+    branches: "Branches",
     
     // Hero section
     heroTitle: "Welcome to Our Site",
@@ -33,6 +34,11 @@ export const translations = {
     where: "Where:",
     eventNotFound: "Event not found",
     eventsMap: "Events Map",
+    head: "Head",
+    phone: "Phone",
+    email: "Email",
+    endTime: "End Time",
+    organizer: "Organizer",
 
     // Announcements section
     announcementTitle: "New Membership Benefits Announced",
@@ -49,7 +55,7 @@ export const translations = {
     bulgarian: "Bulgarian",
     
     // Organization name
-    organizationName: "NATIONAL SOCIETY \"TRADITION\"",
+    organizationName: "NATIONAL SOCIETY \"TRADITION\""
   },
   bg: {
     // Navigation
@@ -58,6 +64,7 @@ export const translations = {
     events: "Събития",
     about: "За нас",
     contact: "Контакти",
+    branches: "Клонове",
     
     // Hero section
     heroTitle: "Добре дошли в нашия сайт",

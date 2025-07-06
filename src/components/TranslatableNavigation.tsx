@@ -14,7 +14,8 @@ export default function TranslatableNavigation() {
     { key: 'gallery', href: 'gallery' },
     { key: 'events', href: 'events' },
     { key: 'about', href: 'about' },
-    { key: 'contact', href: 'contact' }
+    { key: 'contact', href: 'contact' },
+    { key: 'branches', href: 'branches' }
   ];
 
   return (

@@ -1,0 +1,11 @@
+Name,City,Head,Phone,Email,Latitude,Longitude
+Branch A,Sofia,Ivan Petrov,+359881234567,branchA@example.com,42.6977,23.3219
+Branch B,Plovdiv,Maria Georgieva,+359882345678,branchB@example.com,42.1354,24.7452
+Branch C,Varna,Georgi Ivanov,+359883456789,branchC@example.com,43.2047,27.9155
+Branch D,Burgas,Elena Dimitrova,+359884567890,branchD@example.com,42.5048,27.4626
+Branch E,Ruse,Nikolai Kolev,+359885678901,branchE@example.com,43.8484,25.9543
+Branch F,Stara Zagora,Desislava Petrova,+359886789012,branchF@example.com,42.4256,25.6345
+Branch G,Pleven,Petar Ivanov,+359887890123,branchG@example.com,43.4089,24.6217
+Branch H,Sliven,Gergana Hristova,+359888901234,branchH@example.com,42.6856,26.3289
+Branch I,Dobrich,Dimitar Stoev,+359889012345,branchI@example.com,43.5678,27.8234
+Branch J,Shumen,Anelia Petrova,+359880123456,branchJ@example.com,43.2734,26.9234

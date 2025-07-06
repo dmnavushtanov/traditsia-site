@@ -1,231 +1,94 @@
-# Nonprofit Organization Website
+# Traditsia Site
 
-A modern, fully customizable static website built with Next.js for a nonprofit organization featuring multi-tab navigation, image gallery, events management, and interactive Google Maps integration.
+This is a Next.js application built for a nonprofit organization, focusing on showcasing historical re-enactments, events, and a gallery of traditional costumes and medieval events. The site is designed to be modern, performant, and easy to manage.
 
-## 🚀 Features
+## Technologies Used
 
-- **Multi-tab Layout**: Home, About, Contact, Events, and Gallery pages
-- **Events Management**: Dynamic events page with individual event details
-- **Image Gallery**: Optimized image display with metadata support
-- **Interactive Google Maps**: Custom pins for event locations
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **SEO Optimized**: Static generation for better search engine visibility
-- **Future-Ready**: Easily extensible for database, authentication, and CMS integration
+*   **Next.js (App Router):** A React framework for building performant web applications, utilizing server-side rendering (SSR) and static site generation (SSG) capabilities. The App Router is used for a modern routing and data fetching approach.
+*   **React:** A JavaScript library for building user interfaces.
+*   **TypeScript:** A superset of JavaScript that adds static typing, improving code quality and maintainability.
+*   **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+*   **shadcn/ui:** A collection of re-usable components built with Radix UI and Tailwind CSS, providing accessible and customizable UI elements.
+*   **Framer Motion:** A production-ready motion library for React, used for animations and interactive elements.
+*   **Google Maps API:** Integrated for displaying event locations on interactive maps.
+*   **CSV Parsing:** Content for events is sourced from local CSV files.
 
-## 🛠 Technology Stack
+## Image Handling and Optimization
 
-### Core Framework
-- **Next.js 14+** with App Router - React framework for production
-- **React 18** - Component architecture and UI library
-- **TypeScript** - Type safety and better developer experience
-- **Tailwind CSS** - Utility-first CSS framework for styling
+This project leverages Next.js's built-in image optimization capabilities. All images are handled by the `next/image` component, which provides automatic optimization, resizing, and format conversion (e.g., to WebP) on-demand at runtime.
 
-### Content Management
-- **Markdown files** with frontmatter for events and blog posts
-- **JSON files** for configuration data
-- **Gray-matter** for parsing frontmatter
+*   **Where to add images:**
+    *   **Static Assets:** For general site images (like the logo, banner, or other static assets), place them in the `public/images/` directory.
+    *   **Gallery Images:** For gallery content, images should be organized within `public/gallery/` in their respective album subdirectories (e.g., `public/gallery/Historical Reenactment/`).
 
-### Additional Libraries
-- **next/image** - Optimized image loading and processing
-- **@googlemaps/js-api-loader** - Google Maps integration
-- **Framer Motion** - Smooth animations and transitions
-- **React Hook Form** - Form handling and validation
+When using the `next/image` component, you simply reference the image path relative to the `public` directory. Next.js will then optimize and serve the most appropriate image size and format to the user's device, improving performance without manual compression steps.
 
-## 📁 Project Structure
+## Architectural Approach
 
-```
-src/
-├── app/
-│   ├── page.tsx                 # Home page
-│   ├── about/page.tsx          # About page
-│   ├── contact/page.tsx        # Contact page
-│   ├── events/
-│   │   ├── page.tsx            # Events listing
-│   │   └── [slug]/page.tsx     # Individual event pages
-│   ├── gallery/page.tsx        # Image gallery
-│   └── layout.tsx              # Root layout with navigation
-├── components/
-│   ├── Navigation.tsx          # Header navigation
-│   ├── EventCard.tsx          # Event preview cards
-│   ├── ImageGallery.tsx       # Gallery component
-│   ├── GoogleMap.tsx          # Interactive map
-│   └── ContactForm.tsx        # Contact form
-├── content/
-│   ├── events/                # Markdown files for events
-│   │   ├── fundraiser-2024.md
-│   │   └── community-meeting.md
-│   └── gallery/               # Image metadata
-├── lib/
-│   ├── content.ts             # Content parsing utilities
-│   └── maps.ts                # Google Maps configuration
-└── public/
-    ├── images/                # Gallery images
-    └── icons/                 # Map pins and UI icons
-```
+The application leverages the Next.js App Router architecture, distinguishing between Server Components and Client Components:
 
-## 🎯 Why This Tech Stack?
+*   **Server Components:** Used for data fetching (e.g., `getEvents` from CSV files) and rendering static or server-rendered UI parts, improving initial page load performance.
+*   **Client Components:** Used for interactive UI elements (e.g., `GoogleMap`, `ImageLightbox`, `Select` dropdowns) and components requiring React Hooks (`useState`, `useEffect`).
+*   **Content-as-Code:** Event data is managed in local CSV files, providing a straightforward way to update content.
+*   **Modular Component Structure:** The UI is broken down into reusable components (e.g., `EventCard`, `ImageGallery`) for better organization and maintainability.
 
-### Performance Benefits
-- **Static Site Generation (SSG)** for lightning-fast page loads
-- **Image optimization** with Next.js built-in image component
-- **Automatic code splitting** for optimal bundle sizes
-- **Edge deployment** capabilities for global CDN distribution
+## Main Components
 
-### Customization & Flexibility
-- **Component-based architecture** for easy customization
-- **Tailwind CSS** for rapid UI development
-- **TypeScript** for maintainable and scalable code
-- **File-based routing** for intuitive navigation structure
+*   **`src/app/layout.tsx`:** The root layout of the application, responsible for global styling, font loading (`next/font`), and context providers.
+*   **`src/components/TranslatableNavigation.tsx`:** The main navigation bar, including language switching and dynamic routing.
+*   **`src/components/HomePageClient.tsx`:** Client component for the home page, displaying upcoming events and announcements.
+*   **`src/components/EventsPageClient.tsx`:** Client component for the events list page, featuring event filtering and a map display.
+*   **`src/components/EventCard.tsx`:** A reusable component for displaying individual event details in a card format.
+*   **`src/components/EventDetailsClient.tsx`:** Client component for individual event detail pages, including a map centered on the event location.
+*   **`src/components/ImageGallery.tsx`:** Component for displaying image albums.
+*   **`src/components/ImageLightbox.tsx`:** A dynamically loaded component for viewing gallery images in a lightbox.
+*   **`src/components/GoogleMap.tsx`:** An interactive map component, dynamically loaded, displaying event markers.
+*   **`src/components/LanguageSwitcher.tsx`:** Component for switching between supported languages.
+*   **`src/lib/content.ts`:** Utility functions for fetching and processing event data from CSV files.
+*   **`src/lib/translations.ts`:** Manages multi-language translations for the site.
 
-### Ecosystem & Community
-- **Large React ecosystem** with extensive third-party libraries
-- **Active Next.js community** with regular updates and improvements
-- **Comprehensive documentation** and learning resources
-- **Industry standard** tooling and best practices
+## Main Principles for Development
 
-### Hosting Options
-- **Vercel** (recommended) - Zero-config deployment
-- **Netlify** - JAMstack hosting with form handling
-- **GitHub Pages** - Free static hosting
-- **AWS S3 + CloudFront** - Enterprise-grade hosting
+These principles guide the development and maintenance of this project:
 
-## 🗺 Routing Strategy
+*   Avoid feature creep at all cost. Avoid over-engineering and overthinking.
+*   Always prioritize writing clean, simple, and modular code.
+*   Do what the user asks for, exactly and precisely. Nothing more, nothing less.
+*   Execute exactly what is requested, nothing more.
+*   Check that you've implemented every requirement fully & completely.
+*   Prioritize simplicity and minimalism in your solutions.
+*   Use simple & easy-to-understand language. Write in short sentences.
+*   Keep our codebase simple: resist creating new files unless it really makes sense.
 
-### File-Based Routing
-The project uses Next.js App Router with file-based routing:
+### IMPORTANT
 
-- `/` - Home page (`src/app/page.tsx`)
-- `/about` - About page (`src/app/about/page.tsx`)
-- `/contact` - Contact page (`src/app/contact/page.tsx`)
-- `/events` - Events listing (`src/app/events/page.tsx`)
-- `/events/[slug]` - Individual event pages (`src/app/events/[slug]/page.tsx`)
-- `/gallery` - Image gallery (`src/app/gallery/page.tsx`)
+*   BE VERY SUSPICIOUS OF EVERY COMPLICATION in code. SIMPLE = GOOD, COMPLEX = BAD.
+*   Always prioritize writing clean, simple, modular code.
+*   Do not add unnecessary complications.
+*   Implement precisely what the user asks for without additional features or complexity.
+*   Prioritize simplicity and minimalism in your solutions.
+*   Do not add fallbacks if critical libraries not available.
 
-### Dynamic Routes
-- **Event pages**: `/events/fundraiser-2024`, `/events/community-meeting`
-- **Automatic slug generation** from markdown filenames
-- **Static generation** at build time for all event pages
+## Getting Started
 
-## 🔮 Future Extensibility
+To run this project locally:
 
-This architecture is designed for easy expansion:
-
-### Database Integration
-- **Prisma ORM** with PostgreSQL or MongoDB
-- **API routes** for server-side functionality
-- **Database migrations** for schema management
-
-### Authentication & User Management
-- **NextAuth.js** for authentication
-- **Role-based access control** for admin features
-- **User profiles** and member management
-
-### Content Management System
-- **Sanity.io** or **Strapi** for headless CMS
-- **Admin dashboard** for content editors
-- **Media management** for images and documents
-
-### Advanced Features
-- **Newsletter subscription** with email integration
-- **Donation processing** with payment gateways
-- **Event registration** with form handling
-- **Volunteer management** system
-
-## ⚠️ Trade-offs & Considerations
-
-### Potential Challenges
-- **Initial complexity** higher than basic static site generators
-- **Bundle size** may be larger for simple use cases
-- **Google Maps API costs** for high traffic websites
-- **Build times** may increase with large amounts of content
-
-### Mitigation Strategies
-- **Progressive enhancement** - start simple, add features gradually
-- **Code splitting** and lazy loading for performance optimization
-- **API key management** and usage monitoring for Maps
-- **Incremental Static Regeneration (ISR)** for large content sites
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn package manager
-- Git for version control
-
-### Installation
-```bash
-# Clone the repository
-git clone <repository-url>
-cd tradistsia-site
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-
-# Start development server
-npm run dev
-```
-
-### Environment Variables
-Create a `.env.local` file with:
-```
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-### Development Commands
-```bash
-npm run dev        # Start development server
-npm run build      # Build for production
-npm run start      # Start production server
-npm run lint       # Run ESLint
-npm run type-check # Run TypeScript check
-```
-
-## 📝 Content Management
-
-### Adding Events
-1. Create a new markdown file in `src/content/events/`
-2. Add frontmatter with event metadata:
-   ```markdown
-   ---
-   title: "Community Fundraiser 2024"
-   date: "2024-03-15"
-   location: "Community Center"
-   coordinates: [40.7128, -74.0060]
-   description: "Join us for our annual fundraising event"
-   image: "/images/fundraiser-2024.jpg"
-   ---
-   
-   Event content goes here...
-   ```
-
-### Managing Gallery Images
-1. Add images to `public/images/`
-2. Create metadata files in `src/content/gallery/`
-3. Use the ImageGallery component to display them
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-For questions and support, please contact:
-- Email: [organization-email]
-- Website: [organization-website]
-- GitHub Issues: [repository-issues-url]
-
----
-
-Built with ❤️ for nonprofit organizations making a difference in their communities. 
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd traditsia-site
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Set up environment variables:**
+    Copy `env.example` to `.env.local` and fill in your Google Maps API key:
+    ```
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    ```
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) (or the port indicated in your terminal) in your browser.

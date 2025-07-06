@@ -1,1 +1,0 @@
-<!-- Sample community meeting event - to be implemented --> 
