@@ -26,15 +26,12 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ markers, zoom, center }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("Attempting to load Google Map...");
-    console.log("API Key being used: ", process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
       version: 'weekly',
     });
 
     loader.load().then(() => {
-      console.log("Google Maps API loaded. Initializing map...");
       
       let mapCenter = center || { lat: 42.7333, lng: 25.4858 }; // Default: Center of Bulgaria
       let mapZoom = zoom; // Use provided zoom

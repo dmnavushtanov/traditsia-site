@@ -1,1 +1,0 @@
-// Gallery component - to be implemented 
