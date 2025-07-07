@@ -30,7 +30,7 @@ The application leverages the Next.js App Router architecture, distinguishing be
 *   **Server Components:** Used for data fetching (e.g., `getEvents` from CSV files) and rendering static or server-rendered UI parts, improving initial page load performance.
 *   **Client Components:** Used for interactive UI elements (e.g., `GoogleMap`, `ImageLightbox`, `Select` dropdowns) and components requiring React Hooks (`useState`, `useEffect`).
 *   **Content-as-Code:** Event data is managed in local CSV files, providing a straightforward way to update content.
-*   **Modular Component Structure:** The UI is broken down into reusable components (e.g., `EventCard`, `ImageGallery`) for better organization and maintainability.
+*   **Modular Component Structure:** The UI is broken down into reusable components (e.g., `EventCard`) for better organization and maintainability.
 
 ## Main Components
 
@@ -40,7 +40,6 @@ The application leverages the Next.js App Router architecture, distinguishing be
 *   **`src/components/EventsPageClient.tsx`:** Client component for the events list page, featuring event filtering and a map display.
 *   **`src/components/EventCard.tsx`:** A reusable component for displaying individual event details in a card format.
 *   **`src/components/EventDetailsClient.tsx`:** Client component for individual event detail pages, including a map centered on the event location.
-*   **`src/components/ImageGallery.tsx`:** Component for displaying image albums.
 *   **`src/components/ImageLightbox.tsx`:** A dynamically loaded component for viewing gallery images in a lightbox.
 *   **`src/components/GoogleMap.tsx`:** An interactive map component, dynamically loaded, displaying event markers.
 *   **`src/components/LanguageSwitcher.tsx`:** Component for switching between supported languages.

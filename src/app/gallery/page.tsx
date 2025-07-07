@@ -21,16 +21,13 @@ export default function GalleryPage() {
   useEffect(() => {
     async function loadAlbums() {
       try {
-        console.log('Loading albums...');
         const response = await fetch('/api/gallery');
-        console.log('API response status:', response.status);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        console.log('Albums loaded:', data);
         setAlbums(data);
       } catch (error) {
         console.error('Error loading albums:', error);
@@ -83,10 +80,6 @@ export default function GalleryPage() {
                 key={album.name}
                 href={`/gallery/${encodeURIComponent(album.name)}`}
                 className="block bg-[var(--background-soft-cream)] rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300"
-                onClick={(e) => {
-                  console.log('Clicking on album:', album.name);
-                  console.log('Navigating to:', `/gallery/${encodeURIComponent(album.name)}`);
-                }}
               >
                 <div className="aspect-video relative">
                   {album.cover ? (
