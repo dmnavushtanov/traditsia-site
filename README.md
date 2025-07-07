@@ -92,3 +92,22 @@ To run this project locally:
     npm run dev
     ```
     Open [http://localhost:3000](http://localhost:3000) (or the port indicated in your terminal) in your browser.
+
+## Deploying to GitHub Pages
+
+1. **Set the base path**
+   Add your repository name to `.env.local` using `NEXT_PUBLIC_BASE_PATH`.
+   For a repository called `my-site`:
+   ```bash
+   echo "NEXT_PUBLIC_BASE_PATH=my-site" >> .env.local
+   ```
+2. **Export the static site**
+   ```bash
+   npm run export
+   ```
+3. **Publish to GitHub Pages**
+   ```bash
+   git subtree push --prefix out origin gh-pages
+   ```
+   Then enable GitHub Pages from the repository settings, selecting the `gh-pages` branch.
+   Your site will be available at `https://<your-user>.github.io/<repository>/`.
