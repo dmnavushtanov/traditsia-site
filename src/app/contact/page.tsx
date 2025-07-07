@@ -6,7 +6,7 @@ export default function Contact() {
   const { t } = useLanguage();
 
   return (
-    <div className="max-w-6xl mx-auto p-8 text-[var(--text-charcoal)]">
+    <div className="max-w-6xl mx-auto px-8 py-12 text-[var(--text-charcoal)]">
       <h1 className="text-3xl font-bold mb-6">{t('contact')}</h1>
       <p className="text-lg mb-6">
         {t('contactSubtitle')}

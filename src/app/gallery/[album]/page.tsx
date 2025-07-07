@@ -76,7 +76,7 @@ export default function AlbumPage() {
   if (error) {
     return (
       <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <div className="container mx-auto py-12 px-6">
+        <div className="max-w-6xl mx-auto py-12 px-6">
           <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
             &larr; Back to {t('gallery')}
           </Link>
@@ -92,7 +92,7 @@ export default function AlbumPage() {
   if (loading) {
     return (
       <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <div className="container mx-auto py-12 px-6">
+        <div className="max-w-6xl mx-auto py-12 px-6">
           <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
             &larr; Back to {t('gallery')}
           </Link>
@@ -105,7 +105,7 @@ export default function AlbumPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <div className="container mx-auto py-12 px-6">
+      <div className="max-w-6xl mx-auto py-12 px-6">
         <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
           &larr; Back to {t('gallery')}
         </Link>
