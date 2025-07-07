@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background-soft-cream: 40 33% 95%; /* F8F5ED */
+    --background-soft-cream: 38 55% 92%; /* F6EEDF */
     --text-charcoal: 0 0% 20%; /* 333333 */
-    --primary-accent-green: 150 20% 35%; /* 4A6B5A */
-    --secondary-accent-ochre: 40 30% 60%; /* B8A070 */
+    --primary-accent-green: 148 25% 32%; /* 3D6650 */
+    --secondary-accent-ochre: 38 45% 55%; /* C09A59 */
 
     --background: var(--background-soft-cream);
     --foreground: var(--text-charcoal);
