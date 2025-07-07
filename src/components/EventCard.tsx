@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Event } from '@/lib/content';
 
 interface EventCardProps {
@@ -30,10 +31,14 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
   const badge = !isPast ? typeBadges[event.Type] : undefined;
 
   return (
-    <Link
-      href={`/events/${event.slug}`}
-      className="p-4 rounded-xl shadow hover:shadow-lg transition flex flex-col"
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
     >
+      <Link
+        href={`/events/${event.slug}`}
+        className="p-4 rounded-xl shadow hover:shadow-lg transition flex flex-col"
+      >
       {event.ImagePath && (
         <div className="relative w-full h-48 overflow-hidden rounded-md mb-4">
           {isPast ? (
@@ -63,8 +68,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
         </div>
       )}
       <h3 className="font-semibold h-12 line-clamp-2">{event.Title}</h3>
-      <p className="mt-1 text-sm text-gray-600">{event.Date}</p>
-    </Link>
+        <p className="mt-1 text-sm text-gray-600">{event.Date}</p>
+      </Link>
+    </motion.div>
   );
 };
 
