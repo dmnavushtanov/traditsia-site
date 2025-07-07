@@ -91,6 +91,13 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ markers, zoom, center }) => {
           infoWindow.open(map, marker);
         });
       });
+
+      // If on a small screen, fit all markers within view
+      if (typeof window !== "undefined" && window.innerWidth < 768 && validMarkers.length > 1) {
+        const bounds = new google.maps.LatLngBounds();
+        validMarkers.forEach(m => bounds.extend({ lat: m.lat, lng: m.lng }));
+        map.fitBounds(bounds);
+      }
     }).catch(e => console.error("Error loading Google Maps API: ", e));
   }, [markers, zoom, center]);
 
