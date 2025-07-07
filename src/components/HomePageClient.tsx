@@ -18,7 +18,7 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
   return (
     <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
       {/* Hero */}
-      <section className="relative w-full h-[25vw] min-h-[150px] max-h-[300px]">
+      <section className="relative w-full h-[28vw] min-h-[100px] sm:h-[25vw] sm:min-h-[150px] max-h-[300px]">
         <Image
           src="/images/site-banner.webp"
           alt="Traditsia Banner"
