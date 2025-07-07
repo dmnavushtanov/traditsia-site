@@ -24,7 +24,7 @@ const typeBadges: Record<string, { label: string; className: string }> = {
 };
 
 const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
-  const badge = typeBadges[event.Type];
+  const badge = !isPast ? typeBadges[event.Type] : undefined;
 
   return (
     <Link
@@ -33,19 +33,20 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
     >
       {event.ImagePath && (
         <div className="relative w-full h-48 overflow-hidden rounded-md mb-4">
-          {badge && (
+          {isPast ? (
             <span
-              className={`${badge.className} absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded`}
-            >
-              {badge.label}
-            </span>
-          )}
-          {isPast && (
-            <span
-              className="bg-gray-600 text-white border-2 border-black absolute top-2 right-2 z-10 px-2 py-1 text-xs font-semibold rounded"
+              className="bg-gray-600 text-white border-2 border-black absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded"
             >
               Минало Събитие
             </span>
+          ) : (
+            badge && (
+              <span
+                className={`${badge.className} absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded`}
+              >
+                {badge.label}
+              </span>
+            )
           )}
           <Image
             src={event.ImagePath || '/images/events/placeholder.jpg'}
