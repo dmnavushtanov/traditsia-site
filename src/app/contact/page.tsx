@@ -9,9 +9,12 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
-          <p className="mb-2"><strong>Email:</strong> info@ournonprofit.org</p>
-          <p className="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
-          <p className="mb-2"><strong>Address:</strong> 123 Community St, City, State 12345</p>
+          <p className="mb-2"><strong>Email:</strong> nationaltradition@abv.bg</p>
+          <p className="mb-2"><strong>Address:</strong> 
+            Държава: БЪЛГАРИЯ, Област: София (столица), Община: Столична,
+            гр. София, п.к. 1407, р-н Лозенец,
+            ж.к. Лозенец, бул./ул. Любата, бл. 14, вх. Г, ет. 6, ап. 66
+          </p>
         </div>
         
         <div>
