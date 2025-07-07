@@ -17,26 +17,26 @@ interface EventDetailsClientProps {
 export default function EventDetailsClient({ event }: EventDetailsClientProps) {
   const { t } = useLanguage();
 
-  const isValidCoordinates = typeof event.Latitude === 'number' && !isNaN(event.Latitude) && typeof event.Longitude === 'number' && !isNaN(event.Longitude);
+  const isValidCoordinates =
+    typeof event.Latitude === 'number' && !isNaN(event.Latitude) &&
+    typeof event.Longitude === 'number' && !isNaN(event.Longitude);
 
-  const mapComponent = isValidCoordinates ? (
+  const mapComponent = (
     <GoogleMap
-      markers={[
-        {
-          lat: event.Latitude,
-          lng: event.Longitude,
-          title: event.Title,
-          description: event.Description,
-          date: event.Date,
-          hour: event.Hour,
-          city: event.City,
-        },
-      ]}
-      zoom={14}
-      center={{ lat: event.Latitude, lng: event.Longitude }}
+      markers={isValidCoordinates ? [{
+        lat: event.Latitude,
+        lng: event.Longitude,
+        title: event.Title,
+        description: event.Description,
+        date: event.Date,
+        hour: event.Hour,
+        city: event.City,
+      }] : []}
+      zoom={isValidCoordinates ? 14 : undefined}
+      center={isValidCoordinates ? { lat: event.Latitude, lng: event.Longitude } : undefined}
       className="h-full w-full rounded-lg"
     />
-  ) : null;
+  );
 
   return (
     <div className="container mx-auto px-4 py-8">
