@@ -39,7 +39,7 @@ export default function EventDetailsClient({ event }: EventDetailsClientProps) {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column: Image and Map */}
         <div className="space-y-8">

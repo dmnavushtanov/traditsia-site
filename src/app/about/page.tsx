@@ -25,7 +25,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
-      className="max-w-6xl mx-auto p-8 text-foreground"
+      className="max-w-6xl mx-auto px-8 py-12 text-foreground"
     >
       <h1 className="text-3xl font-bold mb-6">{t('about')}</h1>
       <h2 className="text-2xl font-semibold mb-4">{t('aboutMissionTitle')}</h2>

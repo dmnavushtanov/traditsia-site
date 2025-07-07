@@ -43,7 +43,7 @@ export default function GalleryPage() {
   if (loading) {
     return (
       <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
-        <div className="container mx-auto py-12">
+        <div className="max-w-6xl mx-auto py-12">
           <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
           <div className="text-center">Loading albums...</div>
         </div>
@@ -54,7 +54,7 @@ export default function GalleryPage() {
   if (error) {
     return (
       <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
-        <div className="container mx-auto py-12">
+        <div className="max-w-6xl mx-auto py-12">
           <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
           <div className="text-center text-red-600">
             <p>Error loading gallery: {error}</p>
@@ -66,7 +66,7 @@ export default function GalleryPage() {
 
   return (
     <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">
-      <div className="container mx-auto py-12 px-6">
+      <div className="max-w-6xl mx-auto py-12 px-6">
         <h1 className="text-3xl font-bold mb-8">{t('gallery')}</h1>
         
         {albums.length === 0 ? (

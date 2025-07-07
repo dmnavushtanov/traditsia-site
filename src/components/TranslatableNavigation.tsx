@@ -20,7 +20,7 @@ export default function TranslatableNavigation() {
 
   return (
     <header className="bg-[var(--background-soft-cream)] shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
         <Link href="/" className="flex items-center space-x-4 cursor-pointer">
           <Image
             src="/images/gerb.jpg"

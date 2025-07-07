@@ -66,7 +66,7 @@ export default function EventsPageClient({ initialEvents }: EventsPageClientProp
   ];
 
   return (
-    <div className="container mx-auto py-8 px-6">
+    <div className="max-w-6xl mx-auto py-12 px-6">
       <h1 className="text-3xl font-bold mb-8">{t('events')}</h1>
       <div className="mb-4">
         <label htmlFor="month-select" className="mr-2">{t('filterByMonth')}</label>
