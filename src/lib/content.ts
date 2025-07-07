@@ -49,6 +49,9 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     columns: ['EventID', 'Title', 'Description', 'ImagePath', 'City', 'Latitude', 'Longitude', 'Date', 'Hour', 'Type'],
     skip_empty_lines: true,
     relax_column_count: true,
+    // Some titles contain double quotes for emphasis. Allow such quotes
+    // without requiring them to be escaped.
+    relax_quotes: true,
     from_line: 2,
   });
 
