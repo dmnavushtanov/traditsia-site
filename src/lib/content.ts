@@ -58,8 +58,8 @@ export async function getEvents(locale: Language): Promise<Event[]> {
   const allEvents: Event[] = records.map((record: any) => ({
     ...record,
     EventID: (record.EventID || '').padStart(5, '0'),
-    Latitude: parseFloat(record.Latitude) || 0,
-    Longitude: parseFloat(record.Longitude) || 0,
+    Latitude: parseFloat(record.Latitude),
+    Longitude: parseFloat(record.Longitude),
     slug: generateSlug(record.Title || ''),
     Type: record.Type || '',
     ImagePath: String(record.ImagePath || '').trim() || '/images/events/placeholder.jpg',
