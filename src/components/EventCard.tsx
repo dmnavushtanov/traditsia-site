@@ -11,15 +11,18 @@ interface EventCardProps {
 const typeBadges: Record<string, { label: string; className: string }> = {
   country_wide: {
     label: 'Държавно честване',
-    className: 'bg-blue-600 text-white border-2 border-black',
+    className:
+      'bg-blue-600 text-white shadow-[0_0_4px] shadow-blue-600/80',
   },
   local_event: {
     label: 'Възстановка',
-    className: 'bg-green-600 text-white border-2 border-black',
+    className:
+      'bg-green-600 text-white shadow-[0_0_4px] shadow-green-600/80',
   },
   national_event: {
     label: 'Национална Възстановка',
-    className: 'bg-yellow-600 text-white border-2 border-black',
+    className:
+      'bg-yellow-600 text-white shadow-[0_0_4px] shadow-yellow-600/80',
   },
 };
 
@@ -35,7 +38,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
         <div className="relative w-full h-48 overflow-hidden rounded-md mb-4">
           {isPast ? (
             <span
-              className="bg-gray-600 text-white border-2 border-black absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded"
+              className="bg-gray-600 text-white shadow-[0_0_4px] shadow-gray-600/80 absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded"
             >
               Минало Събитие
             </span>
