@@ -46,7 +46,7 @@ export default function EventDetailsClient({ event }: EventDetailsClientProps) {
           {event.ImagePath && (
             <div className="w-full">
               <Image
-                src={event.ImagePath}
+                src={event.ImagePath || '/images/events/placeholder.jpg'}
                 alt={event.Title}
                 width={768}
                 height={432}

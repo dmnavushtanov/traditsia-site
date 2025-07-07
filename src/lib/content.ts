@@ -7,6 +7,10 @@ export interface Event {
   Title: string;
   Description: string;
   ImagePath: string;
+  // Add a default image path if the one from the CSV is empty
+  // This is to prevent errors with next/image component which requires a valid src
+  // If ImagePath is empty, use a placeholder image
+  // The placeholder image is located at public/images/events/placeholder.jpg
   City: string;
   Latitude: number;
   Longitude: number;
@@ -44,6 +48,7 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     delimiter: ';',
     columns: ['EventID', 'Title', 'Description', 'ImagePath', 'City', 'Latitude', 'Longitude', 'Date', 'Hour', 'Type'],
     skip_empty_lines: true,
+    relax_column_count: true,
   });
 
   const allEvents: Event[] = records.map((record: any) => ({
@@ -53,6 +58,7 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     Longitude: parseFloat(record.Longitude) || 0,
     slug: generateSlug(record.Title || ''),
     Type: record.Type || '',
+    ImagePath: String(record.ImagePath || '').trim() || '/images/events/placeholder.jpg',
   }));
 
   const now = new Date();

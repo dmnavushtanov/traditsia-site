@@ -13,7 +13,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       {event.ImagePath && (
         <div className="w-full h-48 overflow-hidden rounded-md mb-4">
           <Image
-            src={event.ImagePath}
+            src={event.ImagePath || '/images/events/placeholder.jpg'}
             alt={event.Title}
             width={400}
             height={250}
