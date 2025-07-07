@@ -11,10 +11,11 @@ const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' })
 export const metadata: Metadata = {
   title: 'НД "Традиция"',
   description: 'Making a difference in our community',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

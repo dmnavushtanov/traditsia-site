@@ -1,17 +1,10 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import { useLanguage } from '@/contexts/LanguageContext';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { notFound } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
+import AlbumPageClient, { AlbumImage } from '@/components/AlbumPageClient';
 
 export async function generateStaticParams() {
   try {
-    const fs = await import('fs/promises');
-    const path = await import('path');
     const galleryPath = path.join(process.cwd(), 'public', 'gallery');
     const entries = await fs.readdir(galleryPath, { withFileTypes: true });
     return entries
@@ -22,147 +15,20 @@ export async function generateStaticParams() {
   }
 }
 
-const ImageLightbox = dynamic(() => import('@/components/ImageLightbox'));
+export default async function AlbumPage({ params }: { params: { album: string } }) {
+  const albumName = decodeURIComponent(params.album);
+  const albumPath = path.join(process.cwd(), 'public', 'gallery', albumName);
 
-interface AlbumImage {
-  name: string;
-  src: string;
-}
-
-export default function AlbumPage() {
-  const params = useParams();
-  const { t } = useLanguage();
-  const [albumName, setAlbumName] = useState<string>('');
-  const [images, setImages] = useState<AlbumImage[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string>('');
-  
-  // Lightbox state
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    if (params?.album) {
-      const decodedAlbumName = decodeURIComponent(params.album as string);
-      setAlbumName(decodedAlbumName);
-    }
-  }, [params]);
-
-  useEffect(() => {
-    if (!albumName) return;
-
-    async function loadAlbumImages() {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/gallery/${encodeURIComponent(albumName)}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setImages(data);
-      } catch (error) {
-        setError(error instanceof Error ? error.message : 'Unknown error');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadAlbumImages();
-  }, [albumName]);
-
-  const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  if (error) {
-    return (
-      <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <div className="container mx-auto py-12 px-6">
-          <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
-            &larr; Back to {t('gallery')}
-          </Link>
-          <h1 className="text-3xl font-bold mb-8">{albumName || 'Album'}</h1>
-          <div className="text-center text-red-600">
-            <p>Error loading album: {error}</p>
-          </div>
-        </div>
-      </div>
-    );
+  try {
+    await fs.access(albumPath);
+  } catch {
+    return notFound();
   }
 
-  if (loading) {
-    return (
-      <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <div className="container mx-auto py-12 px-6">
-          <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
-            &larr; Back to {t('gallery')}
-          </Link>
-          <h1 className="text-3xl font-bold mb-8">{albumName || 'Loading...'}</h1>
-          <div className="text-center">Loading images...</div>
-        </div>
-      </div>
-    );
-  }
+  const files = await fs.readdir(albumPath);
+  const images: AlbumImage[] = files
+    .filter(file => /\.(jpe?g|png|gif|webp)$/i.test(file))
+    .map(fileName => ({ name: fileName, src: `/gallery/${albumName}/${fileName}` }));
 
-  return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <div className="container mx-auto py-12 px-6">
-        <Link href="/gallery" className="text-blue-600 hover:underline mb-6 inline-block">
-          &larr; Back to {t('gallery')}
-        </Link>
-        <h1 className="text-3xl font-bold mb-2">{albumName}</h1>
-        <p className="text-gray-600 mb-8">
-          {images.length} {images.length === 1 ? 'image' : 'images'}
-        </p>
-        {images.length === 0 ? (
-          <div className="text-center text-gray-600">
-            <p>No images found in this album.</p>
-          </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {images.map((image, index) => (
-              <div
-                key={`${image.name}-${index}`}
-                className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <div className="aspect-square relative">
-                  <Image
-                    src={image.src}
-                    alt={image.name}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <ImageLightbox
-          images={images}
-          currentIndex={currentImageIndex}
-          isOpen={lightboxOpen}
-          onClose={closeLightbox}
-          onNext={nextImage}
-          onPrev={prevImage}
-        />
-      )}
-    </div>
-  );
+  return <AlbumPageClient albumName={albumName} images={images} />;
 }
