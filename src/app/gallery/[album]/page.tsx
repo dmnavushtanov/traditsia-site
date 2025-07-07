@@ -8,6 +8,20 @@ import dynamic from 'next/dynamic';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+export async function generateStaticParams() {
+  try {
+    const fs = await import('fs/promises');
+    const path = await import('path');
+    const galleryPath = path.join(process.cwd(), 'public', 'gallery');
+    const entries = await fs.readdir(galleryPath, { withFileTypes: true });
+    return entries
+      .filter(entry => entry.isDirectory())
+      .map(entry => ({ album: encodeURIComponent(entry.name) }));
+  } catch {
+    return [];
+  }
+}
+
 const ImageLightbox = dynamic(() => import('@/components/ImageLightbox'));
 
 interface AlbumImage {
