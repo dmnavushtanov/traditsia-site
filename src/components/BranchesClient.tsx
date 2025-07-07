@@ -36,10 +36,10 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {branches.map((branch, index) => (
+        {branches.map(branch => (
           <div
             key={branch.City}
-            className={`p-4 rounded-xl shadow ${index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'}`}
+            className="p-4 rounded-xl bg-card shadow hover:shadow-lg transition"
           >
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value={branch.City}>
