@@ -49,6 +49,7 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     columns: ['EventID', 'Title', 'Description', 'ImagePath', 'City', 'Latitude', 'Longitude', 'Date', 'Hour', 'Type'],
     skip_empty_lines: true,
     relax_column_count: true,
+    from_line: 2,
   });
 
   const allEvents: Event[] = records.map((record: any) => ({
@@ -97,7 +98,6 @@ export async function getEventBySlug(slug: string, locale: Language): Promise<Ev
   return events.find((event) => event.slug === slug);
 }
 
-import { Language } from '@/lib/translations';
 
 export async function getBranches(locale: Language): Promise<Branch[]> {
   const csvFileName = locale === 'en' ? 'branches.en.csv' : 'branches.csv';
