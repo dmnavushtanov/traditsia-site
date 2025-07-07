@@ -68,7 +68,6 @@ const config: Config = {
       fontFamily: {
         inter: ["var(--font-inter)"],
         montserrat: ["var(--font-montserrat)"],
-        caveat: ["var(--font-caveat)"],
       },
     },
   },

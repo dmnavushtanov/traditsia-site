@@ -40,7 +40,7 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
 
         {/* Announcements & News */}
         <section className="mt-12 bg-[var(--secondary-accent-ochre)] p-6 rounded-lg">
-          <p className="font-caveat text-4xl font-bold text-[var(--text-charcoal)]">
+          <p className="font-montserrat text-4xl font-bold text-[var(--text-charcoal)]">
             {t('newAnnouncement')}
           </p>
         </section>
