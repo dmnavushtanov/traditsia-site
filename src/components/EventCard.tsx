@@ -11,11 +11,11 @@ interface EventCardProps {
 const typeBadges: Record<string, { label: string; className: string }> = {
   country_wide: {
     label: 'Държавно честване',
-    className: 'bg-[var(--primary-accent-green)] text-white border-2 border-black',
+    className: 'bg-blue-600 text-white border-2 border-black',
   },
   local_event: {
     label: 'Възстановка',
-    className: 'bg-[var(--secondary-accent-ochre)] text-white border-2 border-black',
+    className: 'bg-green-600 text-white border-2 border-black',
   },
   national_event: {
     label: 'Национална Възстановка',
