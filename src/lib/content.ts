@@ -13,6 +13,7 @@ export interface Event {
   Date: string;
   Hour: string;
   slug: string;
+  Type: string;
 }
 
 export interface Branch {
@@ -40,8 +41,8 @@ export async function getEvents(locale: Language): Promise<Event[]> {
   const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
   const content = await fs.readFile(csvPath, 'utf-8');
   const records = parse(content, {
-    delimiter: ',',
-    columns: true,
+    delimiter: ';',
+    columns: ['EventID', 'Title', 'Description', 'ImagePath', 'City', 'Latitude', 'Longitude', 'Date', 'Hour', 'Type'],
     skip_empty_lines: true,
   });
 
@@ -51,6 +52,7 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     Latitude: parseFloat(record.Latitude) || 0,
     Longitude: parseFloat(record.Longitude) || 0,
     slug: generateSlug(record.Title || ''),
+    Type: record.Type || '',
   }));
 
   const now = new Date();
