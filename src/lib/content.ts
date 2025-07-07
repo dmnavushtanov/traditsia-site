@@ -23,7 +23,7 @@ export interface Event {
 export interface Branch {
   Name: string;
   City: string;
-  Head: string;
+  Head?: string;
   Phone?: string;
   Email?: string;
   Latitude: number;
@@ -111,13 +111,18 @@ export async function getEventBySlug(slug: string, locale: Language): Promise<Ev
 }
 
 
-export async function getBranches(locale: Language): Promise<Branch[]> {
-  const csvFileName = locale === 'en' ? 'branches.en.csv' : 'branches.csv';
-  const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
+export async function getBranches(_locale: Language): Promise<Branch[]> {
+  const csvPath = path.join(
+    process.cwd(),
+    'src',
+    'content',
+    'Traditsia_Branches.csv'
+  );
   const content = await fs.readFile(csvPath, 'utf-8');
   const records = parse(content, {
     columns: true,
     skip_empty_lines: true,
+    bom: true,
   });
 
   const branches: Branch[] = records.map((record: any) => ({

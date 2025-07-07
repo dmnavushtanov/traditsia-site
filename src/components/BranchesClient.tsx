@@ -41,7 +41,9 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
             <AccordionItem value={branch.City}>
               <AccordionTrigger className="text-xl font-semibold text-primary">{branch.City} - {branch.Name}</AccordionTrigger>
               <AccordionContent className="text-foreground">
-                <p className="flex items-center"><User className="mr-2 h-4 w-4" /><strong>{t('head')}</strong> {branch.Head}</p>
+                {branch.Head && (
+                  <p className="flex items-center"><User className="mr-2 h-4 w-4" /><strong>{t('head')}</strong> {branch.Head}</p>
+                )}
                 {branch.Phone && <p className="flex items-center"><Phone className="mr-2 h-4 w-4" /><strong>{t('phone')}</strong> {branch.Phone}</p>}
                 {branch.Email && <p className="flex items-center"><Mail className="mr-2 h-4 w-4" /><strong>{t('email')}</strong> {branch.Email}</p>}
               </AccordionContent>
