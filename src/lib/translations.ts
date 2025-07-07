@@ -121,6 +121,7 @@ export const translations = {
     title: "Име",
     date: "Дата",
     location: "Място",
+    email: "Имейл",
     description: "Описание",
 
     // Contact page
