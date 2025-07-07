@@ -9,7 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' })
 
 export const metadata: Metadata = {
-  title: 'Nonprofit Organization',
+  title: 'НД "Традиция"',
   description: 'Making a difference in our community',
   viewport: {
     width: 'device-width',
