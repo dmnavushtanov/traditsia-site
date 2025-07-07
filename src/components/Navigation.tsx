@@ -18,7 +18,7 @@ export default function Navigation() {
           </span>
         </div>
         <nav className="space-x-6">
-          {['Home', 'Gallery', 'Events', 'About', 'Contact'].map((item) => (
+          {['Home', 'Gallery', 'Events', 'Contact', 'About'].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
