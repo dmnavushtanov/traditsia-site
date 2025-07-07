@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
+// Ensure this route can be statically exported
+export const dynamic = 'force-static'
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ album: string }> }
