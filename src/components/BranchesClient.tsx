@@ -35,7 +35,7 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
         <GoogleMap markers={markers} zoom={7} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         {branches.map(branch => (
           <div
             key={branch.City}
