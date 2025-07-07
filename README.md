@@ -7,7 +7,7 @@ This is a Next.js application built for a nonprofit organization, focusing on sh
 *   **Next.js (App Router):** A React framework for building performant web applications, utilizing server-side rendering (SSR) and static site generation (SSG) capabilities. The App Router is used for a modern routing and data fetching approach.
 *   **React:** A JavaScript library for building user interfaces.
 *   **TypeScript:** A superset of JavaScript that adds static typing, improving code quality and maintainability.
-*   **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+*   **ca CSS:** A utility-first CSS framework for rapidly building custom designs.
 *   **shadcn/ui:** A collection of re-usable components built with Radix UI and Tailwind CSS, providing accessible and customizable UI elements.
 *   **Framer Motion:** A production-ready motion library for React, used for animations and interactive elements.
 *   **Google Maps API:** Integrated for displaying event locations on interactive maps.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import EventCard from '@/components/EventCard';
 import dynamic from 'next/dynamic';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -16,25 +16,27 @@ interface EventsPageClientProps {
 
 export default function EventsPageClient({ initialEvents }: EventsPageClientProps) {
   const { t } = useLanguage();
-  const [allEvents, setAllEvents] = useState<Event[]>(initialEvents);
   const [filteredEvents, setFilteredEvents] = useState<Event[]>(initialEvents);
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
 
   useEffect(() => {
-    setFilteredEvents(allEvents);
-  }, [allEvents]);
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    let currentEvents = initialEvents;
+
+    if (selectedMonth !== 'all') {
+      currentEvents = initialEvents.filter(event => {
+        const eventDate = new Date(event.Date);
+        return (eventDate.getMonth() + 1).toString() === selectedMonth;
+      });
+    }
+
+    setFilteredEvents(currentEvents);
+  }, [initialEvents, selectedMonth]);
 
   const handleMonthChange = (month: string) => {
     setSelectedMonth(month);
-    if (month === 'all') {
-      setFilteredEvents(allEvents);
-    } else {
-      const filtered = allEvents.filter(event => {
-        const eventMonth = new Date(event.Date).getMonth() + 1;
-        return eventMonth.toString() === month;
-      });
-      setFilteredEvents(filtered);
-    }
   };
 
   const markers = filteredEvents.map(event => ({
@@ -83,16 +85,23 @@ export default function EventsPageClient({ initialEvents }: EventsPageClientProp
         <GoogleMap markers={markers} zoom={8} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredEvents.map((event, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <EventCard event={event} />
-          </motion.div>
-        ))}
+        {filteredEvents.map((event, index) => {
+          const eventDate = new Date(event.Date);
+          const now = new Date();
+          now.setHours(0, 0, 0, 0);
+          const isPast = eventDate < now;
+          return (
+            <motion.div
+              key={event.slug}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={isPast ? "opacity-30 grayscale pointer-events-none" : ""}
+            >
+              <EventCard event={event} />
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

@@ -68,10 +68,11 @@ const config: Config = {
       fontFamily: {
         inter: ["var(--font-inter)"],
         montserrat: ["var(--font-montserrat)"],
+        caveat: ["var(--font-caveat)"],
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
 }
 export default config
  

@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Event } from '@/lib/content';
 
+import EventCard from './EventCard';
+
 interface HomePageClientProps {
   recentEvents: Event[];
 }
@@ -32,29 +34,15 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
         <h2 className="text-2xl font-bold mb-6">{t('upcomingEvents')}</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {recentEvents.map((event) => (
-            <Link key={event.slug} href={`/events/${event.slug}`}>
-              <div className="bg-[var(--background-soft-cream)] rounded-lg overflow-hidden shadow cursor-pointer">
-                <Image
-                  src={event.ImagePath}
-                  alt={event.Title}
-                  width={400}
-                  height={250}
-                  className="object-cover w-full h-48"
-                />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-[var(--primary-accent-green)]">{event.Title}</h3>
-                  <p className="text-[var(--text-charcoal)] mt-2">{event.Date} at {event.Hour}</p>
-                </div>
-              </div>
-            </Link>
+            <EventCard key={event.slug} event={event} />
           ))}
         </div>
 
         {/* Announcements & News */}
         <section className="mt-12 bg-[var(--secondary-accent-ochre)] p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4 text-[var(--primary-accent-green)]">{t('announcementTitle')}</h3>
-          <p className="text-[var(--text-charcoal)]">{t('announcementText')}</p>
-          <p className="text-[var(--text-charcoal)] mt-4">{t('secondaryAnnouncement')}</p>
+          <p className="font-caveat text-4xl font-bold text-[var(--text-charcoal)]">
+            {t('newAnnouncement')}
+          </p>
         </section>
       </main>
 

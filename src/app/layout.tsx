@@ -1,10 +1,11 @@
 import './globals.css'
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Montserrat, Caveat } from 'next/font/google'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import TranslatableNavigation from '@/components/TranslatableNavigation'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
+const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' })
 
 export const metadata = {
   title: 'Nonprofit Organization',
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} ${montserrat.variable} ${inter.variable} bg-background text-foreground`}>
+      <body className={`${inter.className} ${montserrat.variable} ${inter.variable} ${caveat.variable} bg-background text-foreground`}>
         <LanguageProvider>
           <TranslatableNavigation />
           {children}

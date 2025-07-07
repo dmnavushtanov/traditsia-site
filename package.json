@@ -13,6 +13,7 @@
     "@googlemaps/js-api-loader": "^1.16.10",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-select": "^2.2.5",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "clsx": "^2.1.1",
     "csv-parse": "^5.6.0",
     "dotenv": "^17.0.1",

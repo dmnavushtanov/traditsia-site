@@ -40,24 +40,34 @@ export async function getEvents(locale: Language): Promise<Event[]> {
   const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
   const content = await fs.readFile(csvPath, 'utf-8');
   const records = parse(content, {
-    delimiter: ';',
+    delimiter: ',',
     columns: true,
     skip_empty_lines: true,
-    from_line: 2,
   });
 
   const allEvents: Event[] = records.map((record: any) => ({
     ...record,
-    EventID: record.EventID.padStart(5, '0'),
+    EventID: (record.EventID || '').padStart(5, '0'),
     Latitude: parseFloat(record.Latitude) || 0,
     Longitude: parseFloat(record.Longitude) || 0,
-    slug: generateSlug(record.Title),
+    slug: generateSlug(record.Title || ''),
   }));
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);
 
-  const upcomingEvents = allEvents;
+  const upcomingEvents: Event[] = [];
+  const pastEvents: Event[] = [];
+
+  allEvents.forEach(event => {
+    const eventDate = new Date(event.Date);
+    eventDate.setHours(0, 0, 0, 0);
+    if (eventDate >= now) {
+      upcomingEvents.push(event);
+    } else {
+      pastEvents.push(event);
+    }
+  });
 
   upcomingEvents.sort((a, b) => {
     const dateA = new Date(a.Date);
@@ -65,7 +75,13 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     return dateA.getTime() - dateB.getTime();
   });
 
-  return upcomingEvents;
+  pastEvents.sort((a, b) => {
+    const dateA = new Date(a.Date);
+    const dateB = new Date(b.Date);
+    return dateB.getTime() - dateA.getTime(); // Sort past events by most recent first
+  });
+
+  return [...upcomingEvents, ...pastEvents];
 }
 
 export async function getEventBySlug(slug: string, locale: Language): Promise<Event | undefined> {

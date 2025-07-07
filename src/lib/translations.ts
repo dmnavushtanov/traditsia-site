@@ -34,16 +34,19 @@ export const translations = {
     where: "Where:",
     eventNotFound: "Event not found",
     eventsMap: "Events Map",
+    viewOnMap: "View on map",
     head: "Head",
     phone: "Phone",
     email: "Email",
     endTime: "End Time",
     organizer: "Organizer",
+    title: "Title",
+    date: "Date",
+    location: "Location",
+    description: "Description",
 
     // Announcements section
-    announcementTitle: "New Membership Benefits Announced",
-    announcementText: "We are excited to introduce new benefits for our members, including exclusive access to behind-the-scenes tours and early event registration.",
-    secondaryAnnouncement: "Volunteer opportunities available for all skill levels.",
+    newAnnouncement: "A nation that does not remember its past has no present and no future.",
     
     // Footer
     contactEmail: "info@example.org",
@@ -92,11 +95,13 @@ export const translations = {
     where: "Къде:",
     eventNotFound: "Събитието не е намерено",
     eventsMap: "Карта на събитията",
+    title: "Име",
+    date: "Дата",
+    location: "Място",
+    description: "Описание",
 
     // Announcements section
-    announcementTitle: "Обявени са нови предимства за членове",
-    announcementText: "Радваме се да представим новите предимства за нашите членове, включително ексклузивен достъп до обиколки зад кулисите и ранна регистрация за събития.",
-    secondaryAnnouncement: "Налични са възможности за доброволчество за всички нива на умения.",
+    newAnnouncement: "Народ, който не помни миналото си, няма настояще и бъдеще.",
     
     // Footer
     contactEmail: "info@example.org",

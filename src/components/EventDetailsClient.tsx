@@ -1,8 +1,12 @@
+
 'use client';
 
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Event } from '@/lib/content';
+
+import MapAccordion from './MapAccordion';
 
 const GoogleMap = dynamic(() => import('@/components/GoogleMap'), { ssr: false });
 
@@ -11,60 +15,83 @@ interface EventDetailsClientProps {
 }
 
 export default function EventDetailsClient({ event }: EventDetailsClientProps) {
+  const { t } = useLanguage();
+
+  const isValidCoordinates = typeof event.Latitude === 'number' && !isNaN(event.Latitude) && typeof event.Longitude === 'number' && !isNaN(event.Longitude);
+
+  const mapComponent = isValidCoordinates ? (
+    <GoogleMap
+      markers={[
+        {
+          lat: event.Latitude,
+          lng: event.Longitude,
+          title: event.Title,
+          description: event.Description,
+          date: event.Date,
+          hour: event.Hour,
+          city: event.City,
+        },
+      ]}
+      zoom={14}
+      center={{ lat: event.Latitude, lng: event.Longitude }}
+      className="h-full w-full rounded-lg"
+    />
+  ) : null;
+
   return (
-    <>
-      <section className="relative">
-        <div className="h-48 sm:h-64 lg:h-96 overflow-hidden rounded-b-2xl shadow-lg">
-          <Image
-            src={event.ImagePath}
-            alt={event.Title}
-            layout="fill"
-            objectFit="cover"
-            className="brightness-90"
-          />
-        </div>
-        <div className="absolute bottom-4 left-4 text-white">
-          <h1 className="text-2xl sm:text-3xl font-bold drop-shadow-lg">{event.Title}</h1>
-          <p className="mt-1 text-sm sm:text-base drop-shadow">{event.Date}{event.Hour && ` • ${event.Hour}`} • {event.City}</p>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left: Description & Details */}
-        <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl font-semibold">{t('description')}</h2>
-          <p className="leading-relaxed">{event.Description}</p>
-
-          <ul className="space-y-2">
-            <li><strong>{t('when')}:</strong> {event.Date}{event.Hour && ` • ${event.Hour}`}</li>
-            {/* <li><strong>{t('endTime')}:</strong> {event.endTime}</li> */}
-            <li><strong>{t('where')}:</strong> {event.City}</li>
-            {/* <li><strong>{t('organizer')}:</strong> {event.organizer}</li> */}
-          </ul>
-        </div>
-
-        {/* Right: Map + Actions */}
-        <aside className="space-y-6 lg:sticky lg:top-20">
-          {typeof event.Latitude === 'number' && !isNaN(event.Latitude) && typeof event.Longitude === 'number' && !isNaN(event.Longitude) && (
-            <GoogleMap
-              markers={[
-                {
-                  lat: event.Latitude,
-                  lng: event.Longitude,
-                  title: event.Title,
-                  description: event.Description,
-                  date: event.Date,
-                  hour: event.Hour,
-                  city: event.City,
-                },
-              ]}
-              zoom={14} // Closer zoom level for single event location
-              center={{ lat: event.Latitude, lng: event.Longitude }} // Explicitly center on the event
-              className="h-64 rounded-xl shadow"
-            />
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left Column: Image and Map */}
+        <div className="space-y-8">
+          {event.ImagePath && (
+            <div className="w-full">
+              <Image
+                src={event.ImagePath}
+                alt={event.Title}
+                width={768}
+                height={432}
+                className="rounded-lg object-cover w-full h-auto"
+                priority
+              />
+            </div>
           )}
-        </aside>
+          {/* Desktop Map */}
+          <div className="h-96 w-full hidden md:block">
+            {mapComponent}
+          </div>
+        </div>
+
+        {/* Right Column: Details */}
+        <div className="space-y-4 md:relative md:z-10 md:bg-background md:py-4 text-lg">
+          {/* Mobile Map Accordion */}
+          <MapAccordion>{mapComponent}</MapAccordion>
+
+          {event.Title && (
+            <div>
+              <span className="font-semibold w-24 inline-block">{t('title')}:</span>
+              <span>{event.Title}</span>
+            </div>
+          )}
+          {event.Date && (
+            <div>
+              <span className="font-semibold w-24 inline-block">{t('date')}:</span>
+              <span>{event.Date}{event.Hour && ` • ${event.Hour}`}</span>
+            </div>
+          )}
+          {event.City && (
+            <div>
+              <span className="font-semibold w-24 inline-block">{t('location')}:</span>
+              <span>{event.City}</span>
+            </div>
+          )}
+          {event.Description && (
+            <div>
+              <span className="font-semibold w-24 inline-block align-top">{t('description')}:</span>
+              <p className="leading-relaxed inline-block w-[calc(100%-7rem)]">{event.Description}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
