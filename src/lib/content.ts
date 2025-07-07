@@ -65,20 +65,29 @@ export async function getEvents(locale: Language): Promise<Event[]> {
   const now = new Date();
   now.setHours(0, 0, 0, 0);
 
-  const upcomingEvents: Event[] = [];
+  const upcomingWithDate: Event[] = [];
+  const upcomingWithoutDate: Event[] = [];
   const pastEvents: Event[] = [];
 
   allEvents.forEach(event => {
+    if (!event.Date) {
+      upcomingWithoutDate.push(event);
+      return;
+    }
+
     const eventDate = new Date(event.Date);
     eventDate.setHours(0, 0, 0, 0);
-    if (eventDate >= now) {
-      upcomingEvents.push(event);
+
+    if (isNaN(eventDate.getTime())) {
+      upcomingWithoutDate.push(event);
+    } else if (eventDate >= now) {
+      upcomingWithDate.push(event);
     } else {
       pastEvents.push(event);
     }
   });
 
-  upcomingEvents.sort((a, b) => {
+  upcomingWithDate.sort((a, b) => {
     const dateA = new Date(a.Date);
     const dateB = new Date(b.Date);
     return dateA.getTime() - dateB.getTime();
@@ -90,7 +99,7 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     return dateB.getTime() - dateA.getTime(); // Sort past events by most recent first
   });
 
-  return [...upcomingEvents, ...pastEvents];
+  return [...upcomingWithDate, ...upcomingWithoutDate, ...pastEvents];
 }
 
 export async function getEventBySlug(slug: string, locale: Language): Promise<Event | undefined> {
