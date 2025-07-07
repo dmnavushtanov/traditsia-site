@@ -37,18 +37,23 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {branches.map((branch, index) => (
-          <Accordion type="single" collapsible className="w-full" key={branch.City}>
-            <AccordionItem value={branch.City}>
-              <AccordionTrigger className="text-xl font-semibold text-primary">Регионален Клон - {branch.City}</AccordionTrigger>
-              <AccordionContent className="text-foreground">
-                {branch.Head && (
-                  <p className="flex items-center"><User className="mr-2 h-4 w-4" /><strong className="mr-1">{t('head')}</strong>{branch.Head}</p>
-                )}
-                {branch.Phone && <p className="flex items-center"><Phone className="mr-2 h-4 w-4" /><strong className="mr-1">{t('phone')}</strong>{branch.Phone}</p>}
-                {branch.Email && <p className="flex items-center"><Mail className="mr-2 h-4 w-4" /><strong className="mr-1">{t('email')}</strong>{branch.Email}</p>}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div
+            key={branch.City}
+            className={`p-4 rounded-xl shadow ${index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'}`}
+          >
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value={branch.City}>
+                <AccordionTrigger className="text-xl font-semibold text-primary">Регионален Клон - {branch.City}</AccordionTrigger>
+                <AccordionContent className="text-foreground">
+                  {branch.Head && (
+                    <p className="flex items-center"><User className="mr-2 h-4 w-4" /><strong className="mr-1">{t('head')}</strong>{branch.Head}</p>
+                  )}
+                  {branch.Phone && <p className="flex items-center"><Phone className="mr-2 h-4 w-4" /><strong className="mr-1">{t('phone')}</strong>{branch.Phone}</p>}
+                  {branch.Email && <p className="flex items-center"><Mail className="mr-2 h-4 w-4" /><strong className="mr-1">{t('email')}</strong>{branch.Email}</p>}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         ))}
       </div>
     </div>
