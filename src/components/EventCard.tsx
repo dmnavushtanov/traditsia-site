@@ -56,6 +56,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
             alt={event.Title}
             width={400}
             height={250}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="w-full h-full object-cover"
             priority
           />

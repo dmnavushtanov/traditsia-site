@@ -23,7 +23,7 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
           src="/images/site-banner.webp"
           alt="Traditsia Banner"
           fill
-          className="object-contain"
+          className="object-cover"
           sizes="100vw"
           priority
         />

@@ -50,6 +50,7 @@ export default function EventDetailsClient({ event }: EventDetailsClientProps) {
                 alt={event.Title}
                 width={768}
                 height={432}
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="rounded-lg object-cover w-full h-auto"
                 priority
               />
