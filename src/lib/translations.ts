@@ -59,8 +59,6 @@ export const translations = {
     newAnnouncement: "A nation that does not remember its past has no present and no future.",
     
     // Footer
-    contactEmail: "info@example.org",
-    contactPhone: "(123) 456-7890",
     
     // Language switcher
     language: "Language",
@@ -138,8 +136,6 @@ export const translations = {
     newAnnouncement: "Народ, който не помни миналото си, няма настояще и бъдеще.",
     
     // Footer
-    contactEmail: "info@example.org",
-    contactPhone: "(123) 456-7890",
     
     // Language switcher
     language: "Език",
