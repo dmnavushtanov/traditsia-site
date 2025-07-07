@@ -45,6 +45,16 @@ export const translations = {
     location: "Location",
     description: "Description",
 
+    // Contact page
+    contactSubtitle: "Get in touch with us to learn more about our work or to get involved.",
+    contactInformation: "Contact Information",
+    address: "Address",
+    sendUsMessage: "Send us a Message",
+    yourName: "Your Name",
+    yourEmail: "Your Email",
+    yourMessage: "Your Message",
+    sendMessage: "Send Message",
+
     // Announcements section
     newAnnouncement: "A nation that does not remember its past has no present and no future.",
     
@@ -112,6 +122,16 @@ export const translations = {
     date: "Дата",
     location: "Място",
     description: "Описание",
+
+    // Contact page
+    contactSubtitle: "Свържете се с нас, за да научите повече за нашата работа или да се включите.",
+    contactInformation: "Информация за контакт",
+    address: "Адрес",
+    sendUsMessage: "Изпратете ни съобщение",
+    yourName: "Вашето име",
+    yourEmail: "Вашият имейл",
+    yourMessage: "Вашето съобщение",
+    sendMessage: "Изпрати",
 
     // Announcements section
     newAnnouncement: "Народ, който не помни миналото си, няма настояще и бъдеще.",
