@@ -39,7 +39,7 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
         {branches.map(branch => (
           <div
             key={branch.City}
-            className="p-4 rounded-xl bg-card shadow hover:shadow-lg transition"
+            className="p-4 rounded-xl bg-card border shadow hover:shadow-lg transition even:bg-[hsl(var(--primary-accent-green)/0.05)] odd:bg-[hsl(var(--secondary-accent-ochre)/0.05)]"
           >
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value={branch.City}>
