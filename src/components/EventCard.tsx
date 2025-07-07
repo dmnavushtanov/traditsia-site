@@ -5,24 +5,25 @@ import { Event } from '@/lib/content';
 
 interface EventCardProps {
   event: Event;
+  isPast?: boolean;
 }
 
 const typeBadges: Record<string, { label: string; className: string }> = {
   country_wide: {
     label: 'Държавно честване',
-    className: 'bg-[var(--primary-accent-green)] text-white',
+    className: 'bg-[var(--primary-accent-green)] text-white border-2 border-black',
   },
   local_event: {
     label: 'Възстановка',
-    className: 'bg-[var(--secondary-accent-ochre)] text-white',
+    className: 'bg-[var(--secondary-accent-ochre)] text-white border-2 border-black',
   },
   national_event: {
     label: 'Национална Възстановка',
-    className: 'bg-yellow-600 text-white',
+    className: 'bg-yellow-600 text-white border-2 border-black',
   },
 };
 
-const EventCard: React.FC<EventCardProps> = ({ event }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
   const badge = typeBadges[event.Type];
 
   return (
@@ -37,6 +38,13 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
               className={`${badge.className} absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded`}
             >
               {badge.label}
+            </span>
+          )}
+          {isPast && (
+            <span
+              className="bg-gray-600 text-white border-2 border-black absolute top-2 right-2 z-10 px-2 py-1 text-xs font-semibold rounded"
+            >
+              Минало Събитие
             </span>
           )}
           <Image

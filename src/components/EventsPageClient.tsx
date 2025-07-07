@@ -98,7 +98,7 @@ export default function EventsPageClient({ initialEvents }: EventsPageClientProp
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={isPast ? "opacity-30 grayscale pointer-events-none" : ""}
             >
-              <EventCard event={event} />
+              <EventCard event={event} isPast={isPast} />
             </motion.div>
           );
         })}
