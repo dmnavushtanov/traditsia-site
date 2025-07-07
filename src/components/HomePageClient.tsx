@@ -48,17 +48,8 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
 
       {/* Footer */}
       <footer className="bg-[var(--primary-accent-green)] text-white py-8">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between">
-          <div>
-            <p>{t('contactEmail')}</p>
-            <p>{t('contactPhone')}</p>
-          </div>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            {/* Social Icon Placeholders */}
-            <span>FB</span>
-            <span>TW</span>
-            <span>IG</span>
-          </div>
+        <div className="container mx-auto px-6">
+          {/* Footer content removed */}
         </div>
       </footer>
     </div>
