@@ -1,9 +1,9 @@
 import { getEventBySlug, getEvents } from '@/lib/content';
 import EventDetailsClient from '@/components/EventDetailsClient';
 interface EventPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -12,7 +12,8 @@ export async function generateStaticParams() {
 }
 
 export default async function EventPage({ params }: EventPageProps) {
-  const decodedSlug = decodeURIComponent(params.slug);
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
   const event = await getEventBySlug(decodedSlug, 'bg');
 
   if (!event) {
