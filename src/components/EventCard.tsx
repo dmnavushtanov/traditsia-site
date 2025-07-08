@@ -3,31 +3,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Event } from '@/lib/content';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface EventCardProps {
   event: Event;
   isPast?: boolean;
 }
 
-const typeBadges: Record<string, { label: string; className: string }> = {
-  country_wide: {
-    label: 'Държавно честване',
-    className:
-      'bg-blue-600 text-white shadow-[0_0_4px] shadow-blue-600/80',
-  },
-  local_event: {
-    label: 'Възстановка',
-    className:
-      'bg-green-600 text-white shadow-[0_0_4px] shadow-green-600/80',
-  },
-  national_event: {
-    label: 'Национална Възстановка',
-    className:
-      'bg-yellow-600 text-white shadow-[0_0_4px] shadow-yellow-600/80',
-  },
-};
-
 const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
+  const { t } = useLanguage();
+
+  const typeBadges: Record<string, { label: string; className: string }> = {
+    country_wide: {
+      label: t('countryWideBadge'),
+      className:
+        'bg-blue-600 text-white shadow-[0_0_4px] shadow-blue-600/80',
+    },
+    local_event: {
+      label: t('localEventBadge'),
+      className:
+        'bg-green-600 text-white shadow-[0_0_4px] shadow-green-600/80',
+    },
+    national_event: {
+      label: t('nationalEventBadge'),
+      className:
+        'bg-yellow-600 text-white shadow-[0_0_4px] shadow-yellow-600/80',
+    },
+  };
+
   const badge = !isPast ? typeBadges[event.Type] : undefined;
 
   return (
@@ -45,7 +48,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isPast }) => {
             <span
               className="bg-gray-600 text-white shadow-[0_0_4px] shadow-gray-600/80 absolute top-2 left-2 z-10 px-2 py-1 text-xs font-semibold rounded"
             >
-              Минало Събитие
+              {t('pastEvent')}
             </span>
           ) : (
             badge && (

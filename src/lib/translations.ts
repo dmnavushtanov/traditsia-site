@@ -44,6 +44,10 @@ export const translations = {
     date: "Date",
     location: "Location",
     description: "Description",
+    countryWideBadge: "State Celebration",
+    localEventBadge: "Reenactment",
+    nationalEventBadge: "National Reenactment",
+    pastEvent: "Past Event",
 
     // Contact page
     contactSubtitle: "Get in touch with us to learn more about our work or to get involved.",
@@ -121,6 +125,10 @@ export const translations = {
     location: "Място",
     email: "Имейл",
     description: "Описание",
+    countryWideBadge: "Държавно честване",
+    localEventBadge: "Възстановка",
+    nationalEventBadge: "Национална Възстановка",
+    pastEvent: "Минало Събитие",
 
     // Contact page
     contactSubtitle: "Свържете се с нас, за да научите повече за нашата работа или да се включите.",
