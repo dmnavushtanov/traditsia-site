@@ -21,7 +21,10 @@ export default function GalleryPage() {
   useEffect(() => {
     async function loadAlbums() {
       try {
-        const response = await fetch('/api/gallery');
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+          ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\//, '')}`
+          : '';
+        const response = await fetch(`${basePath}/api/gallery`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
