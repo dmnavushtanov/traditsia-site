@@ -2,6 +2,9 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import { cn } from '@/lib/utils';
+
+declare const google: any;
 
 interface Marker {
   lat: number;
@@ -19,10 +22,11 @@ interface Marker {
 interface GoogleMapProps {
   markers: Marker[];
   zoom?: number; // Optional zoom prop
-  center?: { lat: number; lng: number; }; // Optional center prop
+  center?: { lat: number; lng: number }; // Optional center prop
+  className?: string;
 }
 
-const GoogleMap: React.FC<GoogleMapProps> = ({ markers, zoom, center }) => {
+const GoogleMap: React.FC<GoogleMapProps> = ({ markers, zoom, center, className }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -101,7 +105,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ markers, zoom, center }) => {
     }).catch(e => console.error("Error loading Google Maps API: ", e));
   }, [markers, zoom, center]);
 
-  return <div ref={mapRef} className="h-96 md:h-[600px] w-full" />;
+  return <div ref={mapRef} className={cn('h-96 md:h-[600px] w-full', className)} />;
 };
 
 export default GoogleMap;
