@@ -3,12 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import AlbumPageClient, { AlbumImage } from '@/components/AlbumPageClient'
 
-type PageProps = {
-  params: {
-    album: string
-  }
-}
-
+// Remove PageProps alias; treat params as a Promise to match generated PageProps
 export async function generateStaticParams(): Promise<{ album: string }[]> {
   try {
     const galleryPath = path.join(process.cwd(), 'public', 'gallery')
@@ -21,8 +16,9 @@ export async function generateStaticParams(): Promise<{ album: string }[]> {
   }
 }
 
-export default async function AlbumPage({ params }: PageProps) {
-  const albumName = decodeURIComponent(params.album);
+export default async function AlbumPage({ params }: { params: Promise<{ album: string }> }) {
+  const { album } = await params;
+  const albumName = decodeURIComponent(album);
   const albumPath = path.join(process.cwd(), 'public', 'gallery', albumName);
 
   try {
