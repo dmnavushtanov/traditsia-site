@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import fs from 'fs/promises';
 import path from 'path';
 import AlbumPageClient, { AlbumImage } from '@/components/AlbumPageClient';
-interface AlbumPageProps {
+export interface PageProps {
   params: {
     album: string;
   };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PageProps['params'][]> {
   try {
     const galleryPath = path.join(process.cwd(), 'public', 'gallery');
     const entries = await fs.readdir(galleryPath, { withFileTypes: true });
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function AlbumPage({ params }: AlbumPageProps) {
+export default async function AlbumPage({ params }: PageProps) {
   const albumName = decodeURIComponent(params.album);
   const albumPath = path.join(process.cwd(), 'public', 'gallery', albumName);
 
