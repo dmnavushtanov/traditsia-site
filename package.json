@@ -7,7 +7,7 @@
     "check": "tsc --noEmit",
     "lint": "next lint",
     "build": "npm run lint && npm run check && next build",
-    "export": "next build && next export",
+    "export": "next build",
     "start": "next start"
   },
   "dependencies": {

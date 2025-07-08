@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH
   : ''
 
 const nextConfig: NextConfig = {
-  // output: 'export', // disabled to support API routes and SSR
+  output: 'export',
   trailingSlash: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
