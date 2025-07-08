@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build && next export",
-    "start": "next start",
+    "check": "tsc --noEmit",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "build": "npm run lint && npm run check && next build",
+    "export": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.10",
