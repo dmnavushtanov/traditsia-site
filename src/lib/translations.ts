@@ -7,6 +7,7 @@ export const translations = {
     about: "About",
     contact: "Contact",
     branches: "Branches",
+    regionalBranch: "Regional Branch",
     
     // Hero section
     heroTitle: "Welcome to Our Site",
@@ -89,6 +90,7 @@ export const translations = {
     about: "За нас",
     contact: "Контакти",
     branches: "Клонове",
+    regionalBranch: "Регионален клон",
     
     // Hero section
     heroTitle: "Добре дошли в нашия сайт",

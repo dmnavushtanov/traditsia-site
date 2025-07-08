@@ -121,12 +121,13 @@ export async function getEventBySlug(slug: string, locale: Language): Promise<Ev
 }
 
 
-export async function getBranches(_locale: Language): Promise<Branch[]> {
+export async function getBranches(locale: Language): Promise<Branch[]> {
+  const csvFileName = locale === 'en' ? 'branches.en.csv' : 'branches.csv';
   const csvPath = path.join(
     process.cwd(),
     'src',
     'content',
-    'Traditsia_Branches.csv'
+    csvFileName
   );
   const content = await fs.readFile(csvPath, 'utf-8');
   const records = parse(content, {
