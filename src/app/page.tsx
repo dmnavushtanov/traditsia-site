@@ -1,9 +1,8 @@
 import { getEvents, Event } from '@/lib/content';
 import HomePageClient from '@/components/HomePageClient';
-import { Language } from '@/lib/translations';
 
-export default async function HomePage({ params: { lang } }: { params: { lang: Language } }) {
-  const upcomingEvents = await getEvents(lang);
+export default async function HomePage() {
+  const upcomingEvents = await getEvents('bg');
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);
