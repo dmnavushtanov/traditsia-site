@@ -143,4 +143,6 @@ npm run build
 npm run start
 ```
 
+The `build` script first runs linting and a TypeScript check so you can see all issues in one run. You can also execute `npm run check` separately to only perform the type check.
+
 Alternatively, `npm run export` generates a static `out/` directory that can be hosted on any static file server.
