@@ -46,6 +46,29 @@ The application leverages the Next.js App Router architecture, distinguishing be
 *   **`src/lib/content.ts`:** Utility functions for fetching and processing event data from CSV files.
 *   **`src/lib/translations.ts`:** Manages multi-language translations for the site.
 
+## Project Structure
+
+```
+public/             # Static assets served as-is
+  images/           # Logos, banners and other site images
+  gallery/          # Albums for the gallery. Each folder is an album
+src/
+  app/              # Next.js routes
+  components/       # Reusable React components
+  content/          # CSV files with events and branches data
+  contexts/         # React contexts (e.g. language)
+  lib/              # Utility functions and translations
+```
+
+All files inside `public/` are available at the same path on the website. For example, an image at `public/images/site-banner.webp` is served from `/images/site-banner.webp`.
+
+## Updating Content
+
+* **Events** — edit `src/content/events.csv` (Bulgarian) or `events.en.csv` (English). Each row describes an event. Image files referenced in the `ImagePath` column live in `public/images/events/`.
+* **Branches** — update `src/content/branches.csv` or `branches.en.csv` with location details. Coordinates are used to place markers on the map.
+* **Gallery** — create a folder inside `public/gallery/` for each album and drop your images there. The gallery pages are generated automatically based on these folders.
+* **Translations** — modify `src/lib/translations.ts` to change text that appears on the site.
+
 ## Main Principles for Development
 
 These principles guide the development and maintenance of this project:
@@ -110,3 +133,14 @@ To run this project locally:
    ```
    Then enable GitHub Pages from the repository settings, selecting the `gh-pages` branch.
    Your site will be available at `https://<your-user>.github.io/<repository>/`.
+
+## Building and Serving Locally
+
+To create a production build and serve it locally:
+
+```bash
+npm run build
+npm run start
+```
+
+Alternatively, `npm run export` generates a static `out/` directory that can be hosted on any static file server.
