@@ -16,11 +16,7 @@ export default function Contact() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">{t('contactInformation')}</h2>
           <p className="mb-2"><strong>{t('email')}:</strong> nationaltradition@abv.bg</p>
-          <p className="mb-2"><strong>{t('address')}:</strong>
-            Държава: БЪЛГАРИЯ, Област: София (столица), Община: Столична,
-            гр. София, п.к. 1407, р-н Лозенец,
-            ж.к. Лозенец, бул./ул. Любата, бл. 14, вх. Г, ет. 6, ап. 66
-          </p>
+          <p className="mb-2"><strong>{t('address')}:</strong> {t('addressDetails')}</p>
         </div>
         
         <div>
