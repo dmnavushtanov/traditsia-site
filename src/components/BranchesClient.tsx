@@ -20,7 +20,7 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
   const markers = branches.map(branch => ({
     lat: branch.Latitude,
     lng: branch.Longitude,
-    title: `Регионален Клон - ${branch.City}`,
+    title: `${t('regionalBranch')} - ${branch.City}`,
     city: branch.City,
     head: branch.Head,
     phone: branch.Phone,
@@ -43,7 +43,7 @@ export default function BranchesClient({ branches }: BranchesClientProps) {
           >
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value={branch.City}>
-                <AccordionTrigger className="text-xl font-semibold text-primary">Регионален Клон - {branch.City}</AccordionTrigger>
+                <AccordionTrigger className="text-xl font-semibold text-primary">{t('regionalBranch')} - {branch.City}</AccordionTrigger>
                 <AccordionContent className="text-foreground">
                   {branch.Head && (
                     <p className="flex items-center"><User className="mr-2 h-4 w-4" /><strong className="mr-1">{t('head')}</strong>{branch.Head}</p>
