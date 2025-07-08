@@ -21,13 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and Export the site
+      - name: Build the site
         env:
           NEXT_PUBLIC_BASE_PATH: traditsia-site
           NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
-        run: |
-          npm run build
-          npm run export
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
