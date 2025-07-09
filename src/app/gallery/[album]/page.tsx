@@ -3,6 +3,8 @@ import fs from 'fs/promises'
 import path from 'path'
 import AlbumPageClient, { AlbumImage } from '@/components/AlbumPageClient'
 
+export const dynamic = 'force-static'
+
 // Remove PageProps alias; treat params as a Promise to match generated PageProps
 export async function generateStaticParams(): Promise<{ album: string }[]> {
   try {
