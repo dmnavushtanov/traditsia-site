@@ -62,7 +62,7 @@ export const translations = {
     sendMessage: "Send Message",
 
     // Announcements section
-    newAnnouncement: "A nation that does not remember its past has no present and no future.",
+    newAnnouncement: "A nation that remembers its past has a present and a future.",
     
     // Footer
     
@@ -150,7 +150,7 @@ export const translations = {
     sendMessage: "Изпрати",
 
     // Announcements section
-    newAnnouncement: "Народ, който не помни миналото си, няма настояще и бъдеще.",
+    newAnnouncement: "НАРОД, КОЙТО ПОМНИ МИНАЛОТО СИ, ИМА НАСТОЯЩЕ И БЪДЕЩЕ",
     
     // Footer
     
