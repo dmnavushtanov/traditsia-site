@@ -50,6 +50,10 @@ const generateSlug = (title: string) => {
 
 import { Language } from '@/lib/translations';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\//, '')}`
+  : '';
+
 export async function getEvents(locale: Language): Promise<Event[]> {
   const csvFileName = locale === 'en' ? 'events.en.csv' : 'events.csv';
   const csvPath = path.join(process.cwd(), 'src', 'content', csvFileName);
@@ -65,15 +69,19 @@ export async function getEvents(locale: Language): Promise<Event[]> {
     from_line: 2,
   });
 
-  const allEvents: Event[] = records.map((record: any) => ({
-    ...record,
-    EventID: (record.EventID || '').padStart(5, '0'),
-    Latitude: parseFloat(record.Latitude),
-    Longitude: parseFloat(record.Longitude),
-    slug: generateSlug(record.Title || ''),
-    Type: record.Type || '',
-    ImagePath: String(record.ImagePath || '').trim() || '/images/events/placeholder.jpg',
-  }));
+  const allEvents: Event[] = records.map((record: any) => {
+    const rawPath = String(record.ImagePath || '').trim() || '/images/events/placeholder.jpg';
+    const cleaned = rawPath.replace(/^\//, '');
+    return {
+      ...record,
+      EventID: (record.EventID || '').padStart(5, '0'),
+      Latitude: parseFloat(record.Latitude),
+      Longitude: parseFloat(record.Longitude),
+      slug: generateSlug(record.Title || ''),
+      Type: record.Type || '',
+      ImagePath: `${basePath}/${cleaned}`,
+    };
+  });
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);

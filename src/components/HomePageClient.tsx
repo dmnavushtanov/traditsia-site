@@ -6,6 +6,10 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Event } from '@/lib/content';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\//, '')}`
+  : '';
+
 import EventCard from './EventCard';
 
 interface HomePageClientProps {
@@ -20,7 +24,7 @@ export default function HomePageClient({ recentEvents }: HomePageClientProps) {
       {/* Hero */}
       <section className="relative w-full h-[28vw] min-h-[100px] sm:h-[25vw] sm:min-h-[150px] max-h-[300px]">
         <Image
-          src="/images/site-banner.webp"
+          src={`${basePath}/images/site-banner.webp`}
           alt="Traditsia Banner"
           fill
           className="object-cover"
