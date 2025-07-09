@@ -24,7 +24,7 @@ export default async function AlbumPage({ params }: { params: Promise<{ album: s
   const albumPath = path.join(process.cwd(), 'public', 'gallery', albumName);
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH
-    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\//, '')}`
+    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\//, '')}`
     : '';
 
   try {
