@@ -12,7 +12,7 @@ export async function generateStaticParams(): Promise<{ album: string }[]> {
     const entries = await fs.readdir(galleryPath, { withFileTypes: true })
     return entries
       .filter(entry => entry.isDirectory())
-      .map(entry => ({ album: encodeURIComponent(entry.name) }))
+      .map(entry => ({ album: entry.name }))
   } catch {
     return []
   }

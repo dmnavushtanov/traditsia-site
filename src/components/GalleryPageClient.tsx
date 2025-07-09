@@ -26,7 +26,7 @@ export default function GalleryPageClient({ albums }: Props) {
             {albums.map(album => (
               <Link
                 key={album.name}
-                href={`/gallery/${encodeURIComponent(album.name)}`}
+                href={`/gallery/${album.name}`}
                 className="block bg-[var(--background-soft-cream)] rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="aspect-video relative">
