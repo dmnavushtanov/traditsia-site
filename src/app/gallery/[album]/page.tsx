@@ -23,6 +23,10 @@ export default async function AlbumPage({ params }: { params: Promise<{ album: s
   const albumName = decodeURIComponent(album);
   const albumPath = path.join(process.cwd(), 'public', 'gallery', albumName);
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\//, '')}`
+    : '';
+
   try {
     await fs.access(albumPath);
   } catch {
@@ -32,7 +36,10 @@ export default async function AlbumPage({ params }: { params: Promise<{ album: s
   const files = await fs.readdir(albumPath);
   const images: AlbumImage[] = files
     .filter(file => /\.(jpe?g|png|gif|webp)$/i.test(file))
-    .map(fileName => ({ name: fileName, src: `/gallery/${albumName}/${fileName}` }));
+    .map(fileName => ({
+      name: fileName,
+      src: `${basePath}/gallery/${albumName}/${fileName}`,
+    }));
 
   return <AlbumPageClient albumName={albumName} images={images} />;
 }
