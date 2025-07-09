@@ -26,8 +26,12 @@ export async function getAlbumList(): Promise<AlbumMeta[]> {
         const files = await fs.readdir(albumPath);
         const imageFiles = files.filter(file => /\.(jpe?g|png|gif|webp)$/i.test(file));
 
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+          ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\//, '')}`
+          : '';
+
         const cover = imageFiles.length > 0
-          ? `/gallery/${albumName}/${imageFiles[Math.floor(Math.random() * imageFiles.length)]}`
+          ? `${basePath}/gallery/${albumName}/${imageFiles[Math.floor(Math.random() * imageFiles.length)]}`
           : null;
 
         return {
