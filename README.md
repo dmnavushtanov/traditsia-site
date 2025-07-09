@@ -105,10 +105,11 @@ To run this project locally:
     npm install
     ```
 3.  **Set up environment variables:**
-    Copy `env.example` to `.env.local` and fill in your Google Maps API key:
+    Copy `env.example` to `.env.local` and replace the Google Maps key placeholder with your real key. The `.env.local` file is ignored by Git so your secret won't be committed:
     ```
-    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_real_key_here
     ```
+    When deploying, define the same variable (`NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`) as a repository secret so the build workflow can access it.
 4.  **Run the development server:**
     ```bash
     npm run dev
