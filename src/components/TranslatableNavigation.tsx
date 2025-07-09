@@ -2,6 +2,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\//, '')}`
+  : '';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
@@ -23,7 +27,7 @@ export default function TranslatableNavigation() {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link href="/" className="flex items-center space-x-4 cursor-pointer">
           <Image
-            src="/images/gerb.jpg"
+            src={`${basePath}/images/gerb.jpg`}
             alt="Traditsia Logo"
             width={50}
             height={50}
