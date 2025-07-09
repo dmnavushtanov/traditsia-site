@@ -10,15 +10,8 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   images: { unoptimized: true },
-  webpack: (config) => {
-    config.plugins.push(
-      new (require('webpack').DefinePlugin)({
-        'process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY': JSON.stringify(
-          process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-        ),
-      })
-    )
-    return config
+  env: {
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   },
 }
 
