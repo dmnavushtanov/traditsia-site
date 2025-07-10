@@ -118,17 +118,15 @@ To run this project locally:
 
 ## Deploying to GitHub Pages
 
-1. **Set the base path**
-   Add your repository name to `.env.local` using `NEXT_PUBLIC_BASE_PATH`.
-   For a repository called `my-site`:
-   ```bash
-   echo "NEXT_PUBLIC_BASE_PATH=my-site" >> .env.local
-   ```
-2. **Export the static site**
+The build script automatically detects when it runs inside a GitHub workflow and
+applies the correct base path for your repository. When testing locally you can
+override this by setting `NEXT_PUBLIC_BASE_PATH`.
+
+1. **Export the static site**
    ```bash
    npm run export
    ```
-3. **Publish to GitHub Pages**
+2. **Publish to GitHub Pages**
    ```bash
    git subtree push --prefix out origin gh-pages
    ```
