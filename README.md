@@ -119,8 +119,9 @@ To run this project locally:
 ## Deploying to GitHub Pages
 
 The build script automatically detects when it runs inside a GitHub workflow and
-applies the correct base path for your repository. When testing locally you can
-override this by setting `NEXT_PUBLIC_BASE_PATH`.
+applies the correct base path for your repository. If you are using a custom
+domain (no `/traditsia-site` path) set `NEXT_PUBLIC_BASE_PATH` to an empty
+string, otherwise set it to your repository name.
 
 1. **Export the static site**
    ```bash
