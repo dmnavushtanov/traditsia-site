@@ -26,7 +26,9 @@ jobs:
 
       - name: Build the site
         env:
-          NEXT_PUBLIC_BASE_PATH: traditsia-site
+          # Empty string ensures no repository subpath is used when deploying
+          # to a custom domain such as nd-traditsiya.com
+          NEXT_PUBLIC_BASE_PATH: ""
           NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
         run: npm run build
 
