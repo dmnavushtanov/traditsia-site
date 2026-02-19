@@ -1,36 +1,36 @@
 EventID;Title;Description;ImagePath;City;Latitude;Longitude;Date;Hour;Type
-00001;Tribute to the work and heroism of the poet-voivode Hristo Botev;;/images/events/event-00001.jpg;;;;2025-01-06;;country_wide
-00002;Reenactment "Liberation of Harmanli";;/images/events/event-00002.jpg;Harmanli;41.927511;25.905546;2025-01-20;;local_event
-00003;Reenactment "Liberation of Targovishte";;/images/events/event-00003.jpg;Targovishte;43.244962;26.574581;2025-01-27;;local_event
-00004;Reenactment "Liberation of Dobrich";;/images/events/event-00004.jpg;Dobrich;43.566700;27.833300;2025-01-27;;local_event
-00005;Tribute to the self-sacrifice of the Apostle of Freedom Vasil Levski;;/images/events/event-00005.jpg;Nationwide;;;2025-02-19;;country_wide
-00006;Celebration of the Liberation of Bulgaria from Ottoman rule;;/images/events/event-00006.jpg;Nationwide;;;2025-03-03;;country_wide
-00007;Reenactment "Liberation of Veliki Preslav";;/images/events/event-00007.jpg;Veliki Preslav;43.063100;27.009700;2025-03-03;;local_event
-00008;Reenactment "The Oath of the Oborishte Deputies 1876" in Banya-Panagyurishte village;;/images/events/event-00008.jpg;Banya village, Panagyurishte;42.466667;24.133333;2025-04-20;;local_event
-00009;Reenactment "Courage and Self-sacrifice" in Panagyurishte;;/images/events/event-00009.jpg;Panagyurishte;42.503246;24.191987;2025-04-27;;local_event
-00010;Reenactments "April Uprising 1876" in Koprivshtitsa and Klisura;;/images/events/event-00010.jpg;Koprivshtitsa/Klisura;42.832200;24.035800;2025-05-01;;local_event
-00011;Reenactment "The Last Shots of the April Uprising in the Gabrovo region";;/images/events/event-00011.jpg;Gabrovo;42.872785;25.316813;2025-05-04;;local_event
-00012;Reenactment "Sevlievo Uprising";;/images/events/event-00012.jpg;Sevlievo;43.027200;25.099741;2025-05-11;;local_event
-00013;Reenactment "Novo Selo Republic";;/images/events/event-00013.jpg;Apriltsi/Troyan/Sevlievo;42.887242;24.710214;2025-05-12;;local_event
-00014;Reenactment "Battle of Dryanovo Monastery";;/images/events/event-00014.jpg;Dryanovo;42.950681;25.431906;2025-05-11;;local_event
-00015;Reenactment "Battle of Musina village";;/images/events/event-00015.jpg;Musina village;43.154460;25.428858;2025-05;;local_event
-00016;Reenactment "April Uprising in Byala Cherkva";;/images/events/event-00016.jpg;Byala Cherkva;43.206123;25.310234;2025-05-10;;local_event
-00017;Commemoration of the death of Voivode Hristo Botev in the country;;/images/events/event-00017.jpg;Nationwide;;;2025-06-02;;country_wide
-00018;Reenactment "Rada Voivoda";;/images/events/event-00018.jpg;Dryanovo;42.9261;25.3842;2025-06-15;;local_event
-00019;Tactical exercise on the territory of "45th Mechanized Brigade";;/images/events/event-00019.jpg;;;;2025-06;;local_event
-00020;Reenactment "The Last Battle of Hadzhi Dimitar's Detachment";;/images/events/event-00020.jpg;Kazanlak;42.622369;25.389744;2025-07-20;;local_event
-00021;Celebration of the birth of the Apostle of Freedom Vasil Levski;;/images/events/event-00021.jpg;Nationwide;;;2025-07-18;;country_wide
-00022;Battle of Nova Zagora 1887;;/images/events/event-00022.jpg;Nova Zagora;42.493358;26.008162;2025-07;;local_event
-00023;Reenactment "Kanladere";;/images/events/event-00023.jpg;Tryavna;42.8824;25.4677;2025-07-13;;local_event
-00024;Reenactment "Petrova Niva";;/images/events/event-00024.jpg;Nova Zagora;42.493358;26.008162;2025-08-17;;local_event
-00025;Reenactment "Haiduk Festival";;/images/events/event-00025.jpg;Nova Zagora;42.493358;26.008162;2025-08;;local_event
-00026;National military-historical reenactment "Shipka Epic 1877";;/images/events/event-00026.jpg;Kazanlak/Apriltsi/Troyan/Sevlievo;;;2025-08;;national_event
-00027;Military-historical reenactment "Defense of Kavarna";;/images/events/event-00027.jpg;Kavarna;43.435743;28.338544;2025-08;;local_event
-00028;Reenactment in Stoilovo village;;/images/events/event-00028.jpg;Nova Zagora;42.493358;26.008162;2025-09-06;;local_event
-00029;Celebration of "Declaration of Bulgarian Independence 1908";;/images/events/event-00029.jpg;;;;2025-09-22;;country_wide
-00030;Reenactments "Doiran" and "WWII" in Kazanlak at a military training ground;;/images/events/event-00030.jpg;Kazanlak;42.622369;25.389744;2025-10-05;;local_event
-00031;Reenactment "Liberation of Blagoevgrad - 1912";;/images/events/event-00031.jpg;Blagoevgrad;42.015857;23.096071;2025-10;;local_event
-00032;Reenactment "Serbo-Bulgarian War 1885" near Slivnitsa;;/images/events/event-00032.jpg;Slivnitsa;42.853384;23.038000;2025-11-10;;national_event
+00001;Tribute to the work and heroism of the poet-voivode Hristo Botev;;/images/events/event-00001.jpg;;;;2026-01-06;;country_wide
+00002;Reenactment "Liberation of Harmanli";;/images/events/event-00002.jpg;Harmanli;41.927511;25.905546;2026-01-20;;local_event
+00003;Reenactment "Liberation of Targovishte";;/images/events/event-00003.jpg;Targovishte;43.244962;26.574581;2026-01-27;;local_event
+00004;Reenactment "Liberation of Dobrich";;/images/events/event-00004.jpg;Dobrich;43.566700;27.833300;2026-01-27;;local_event
+00005;Tribute to the self-sacrifice of the Apostle of Freedom Vasil Levski;;/images/events/event-00005.jpg;Nationwide;;;2026-02-19;;country_wide
+00006;Celebration of the Liberation of Bulgaria from Ottoman rule;;/images/events/event-00006.jpg;Nationwide;;;2026-03-03;;country_wide
+00007;Reenactment "Liberation of Veliki Preslav";;/images/events/event-00007.jpg;Veliki Preslav;43.063100;27.009700;2026-03-03;;local_event
+00008;Reenactment "The Oath of the Oborishte Deputies 1876" in Banya-Panagyurishte village;;/images/events/event-00008.jpg;Banya village, Panagyurishte;42.466667;24.133333;2026-04-20;;local_event
+00009;Reenactment "Courage and Self-sacrifice" in Panagyurishte;;/images/events/event-00009.jpg;Panagyurishte;42.503246;24.191987;2026-04-27;;local_event
+00010;Reenactments "April Uprising 1876" in Koprivshtitsa and Klisura;;/images/events/event-00010.jpg;Koprivshtitsa/Klisura;42.832200;24.035800;2026-05-01;;local_event
+00011;Reenactment "The Last Shots of the April Uprising in the Gabrovo region";;/images/events/event-00011.jpg;Gabrovo;42.872785;25.316813;2026-05-04;;local_event
+00012;Reenactment "Sevlievo Uprising";;/images/events/event-00012.jpg;Sevlievo;43.027200;25.099741;2026-05-11;;local_event
+00013;Reenactment "Novo Selo Republic";;/images/events/event-00013.jpg;Apriltsi/Troyan/Sevlievo;42.887242;24.710214;2026-05-12;;local_event
+00014;Reenactment "Battle of Dryanovo Monastery";;/images/events/event-00014.jpg;Dryanovo;42.950681;25.431906;2026-05-11;;local_event
+00015;Reenactment "Battle of Musina village";;/images/events/event-00015.jpg;Musina village;43.154460;25.428858;2026-05;;local_event
+00016;Reenactment "April Uprising in Byala Cherkva";;/images/events/event-00016.jpg;Byala Cherkva;43.206123;25.310234;2026-05-10;;local_event
+00017;Commemoration of the death of Voivode Hristo Botev in the country;;/images/events/event-00017.jpg;Nationwide;;;2026-06-02;;country_wide
+00018;Reenactment "Rada Voivoda";;/images/events/event-00018.jpg;Dryanovo;42.9261;25.3842;2026-06-15;;local_event
+00019;Tactical exercise on the territory of "45th Mechanized Brigade";;/images/events/event-00019.jpg;;;;2026-06;;local_event
+00020;Reenactment "The Last Battle of Hadzhi Dimitar's Detachment";;/images/events/event-00020.jpg;Kazanlak;42.622369;25.389744;2026-07-20;;local_event
+00021;Celebration of the birth of the Apostle of Freedom Vasil Levski;;/images/events/event-00021.jpg;Nationwide;;;2026-07-18;;country_wide
+00022;Battle of Nova Zagora 1887;;/images/events/event-00022.jpg;Nova Zagora;42.493358;26.008162;2026-07;;local_event
+00023;Reenactment "Kanladere";;/images/events/event-00023.jpg;Tryavna;42.8824;25.4677;2026-07-13;;local_event
+00024;Reenactment "Petrova Niva";;/images/events/event-00024.jpg;Nova Zagora;42.493358;26.008162;2026-08-17;;local_event
+00025;Reenactment "Haiduk Festival";;/images/events/event-00025.jpg;Nova Zagora;42.493358;26.008162;2026-08;;local_event
+00026;National military-historical reenactment "Shipka Epic 1877";;/images/events/event-00026.jpg;Kazanlak/Apriltsi/Troyan/Sevlievo;;;2026-08;;national_event
+00027;Military-historical reenactment "Defense of Kavarna";;/images/events/event-00027.jpg;Kavarna;43.435743;28.338544;2026-08;;local_event
+00028;Reenactment in Stoilovo village;;/images/events/event-00028.jpg;Nova Zagora;42.493358;26.008162;2026-09-06;;local_event
+00029;Celebration of "Declaration of Bulgarian Independence 1908";;/images/events/event-00029.jpg;;;;2026-09-22;;country_wide
+00030;Reenactments "Doiran" and "WWII" in Kazanlak at a military training ground;;/images/events/event-00030.jpg;Kazanlak;42.622369;25.389744;2026-10-05;;local_event
+00031;Reenactment "Liberation of Blagoevgrad - 1912";;/images/events/event-00031.jpg;Blagoevgrad;42.015857;23.096071;2026-10;;local_event
+00032;Reenactment "Serbo-Bulgarian War 1885" near Slivnitsa;;/images/events/event-00032.jpg;Slivnitsa;42.853384;23.038000;2026-11-10;;national_event
 00033;Lectures in schools and universities;;/images/events/placeholder.jpg;;;;;
 00034;Organization of exhibitions with historical military items;;/images/events/event-00034.jpg;;;;;;
 00035;Restoration and maintenance of military monuments;;/images/events/event-00035.jpg;;;;;
