@@ -7,7 +7,7 @@ EventID;Title;Description;ImagePath;City;Latitude;Longitude;Date;Hour;Type
 00006;Celebration of the Liberation of Bulgaria from Ottoman rule;;/images/events/event-00006.jpg;Nationwide;;;2026-03-03;;country_wide
 00007;Reenactment "Liberation of Veliki Preslav";;/images/events/event-00007.jpg;Veliki Preslav;43.063100;27.009700;2026-03-03;;local_event
 00008;Reenactment "The Oath of the Oborishte Deputies 1876" in Banya-Panagyurishte village;;/images/events/event-00008.jpg;Banya village, Panagyurishte;42.466667;24.133333;2026-04-20;;local_event
-00009;Reenactment "Courage and Self-sacrifice" in Panagyurishte;;/images/events/event-00009.jpg;Panagyurishte;42.503246;24.191987;2026-04-27;;local_event
+00009;Reenactment "Courage and Self-sacrifice" in Panagyurishte;;/images/events/event-00009.jpg;Panagyurishte;42.503246;24.191987;2026-05-01;;local_event
 00010;Reenactments "April Uprising 1876" in Koprivshtitsa and Klisura;;/images/events/event-00010.jpg;Koprivshtitsa/Klisura;42.832200;24.035800;2026-05-01;;local_event
 00011;Reenactment "The Last Shots of the April Uprising in the Gabrovo region";;/images/events/event-00011.jpg;Gabrovo;42.872785;25.316813;2026-05-04;;local_event
 00012;Reenactment "Sevlievo Uprising";;/images/events/event-00012.jpg;Sevlievo;43.027200;25.099741;2026-05-11;;local_event
@@ -18,7 +18,7 @@ EventID;Title;Description;ImagePath;City;Latitude;Longitude;Date;Hour;Type
 00017;Commemoration of the death of Voivode Hristo Botev in the country;;/images/events/event-00017.jpg;Nationwide;;;2026-06-02;;country_wide
 00018;Reenactment "Rada Voivoda";;/images/events/event-00018.jpg;Dryanovo;42.9261;25.3842;2026-06-15;;local_event
 00019;Tactical exercise on the territory of "45th Mechanized Brigade";;/images/events/event-00019.jpg;;;;2026-06;;local_event
-00020;Reenactment "The Last Battle of Hadzhi Dimitar's Detachment";;/images/events/event-00020.jpg;Kazanlak;42.622369;25.389744;2026-07-20;;local_event
+00020;Reenactment "The Last Battle of Hadzhi Dimitar's Detachment";;/images/events/event-00020.jpg;Kazanlak;42.622369;25.389744;2026-07-18;;local_event
 00021;Celebration of the birth of the Apostle of Freedom Vasil Levski;;/images/events/event-00021.jpg;Nationwide;;;2026-07-18;;country_wide
 00022;Battle of Nova Zagora 1887;;/images/events/event-00022.jpg;Nova Zagora;42.493358;26.008162;2026-07;;local_event
 00023;Reenactment "Kanladere";;/images/events/event-00023.jpg;Tryavna;42.8824;25.4677;2026-07-13;;local_event
