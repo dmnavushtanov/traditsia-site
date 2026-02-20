@@ -1,5 +1,5 @@
 import EventDetailsClient from '@/components/EventDetailsClient'
-import { getEventBySlug, getEvents } from '@/lib/content'
+import { getEvents, Event } from '@/lib/content'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
