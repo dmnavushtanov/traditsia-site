@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import Image from 'next/image';
@@ -36,6 +36,31 @@ export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomeP
         />
       </section>
 
+      {/* Parchment Banner */}
+      <section className="relative w-full mt-2 h-[8.4vw] min-h-[28px] sm:h-[7.5vw] sm:min-h-[40px] max-h-[90px] overflow-visible shadow-inner">
+        <Image
+          src={`${basePath}/images/parchment-scroll-webp.webp`}
+          alt="Parchment Scroll"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-6">
+          <div className="text-left text-[clamp(12px,2.2vw,36px)] leading-tight text-[var(--text-charcoal)] font-cinzel whitespace-nowrap pr-3">
+            <span className="font-extrabold text-[1.3em] sm:text-[1.5em]">150</span>
+            <span className="font-semibold"> години Априлско въстание (1876~2026)</span>
+          </div>
+          <Image
+            src={`${basePath}/images/Red stamp_cropped-webp.webp`}
+            alt="Red Wax Stamp"
+            width={330}
+            height={330}
+            className="relative w-[27vw] max-w-[240px] -translate-y-[10%] rotate-[30deg] shrink-0 -translate-x-[10%] sm:translate-x-0"
+            sizes="(max-width: 640px) 30vw, 240px"
+          />
+        </div>
+      </section>
+
       {/* Upcoming Events */}
       <main className="flex-grow container mx-auto px-6 py-12">
         <h2 className="text-2xl font-bold mb-6">{t('upcomingEvents')}</h2>
@@ -44,14 +69,11 @@ export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomeP
             <EventCard key={event.slug} event={event} />
           ))}
         </div>
-
-        {/* Announcements & News */}
-        <section className="mt-12 bg-[var(--secondary-accent-ochre)] p-6 rounded-lg">
-          <p className="font-caveat text-4xl font-bold text-[var(--text-charcoal)]">
-            {t('newAnnouncement')}
-          </p>
-        </section>
       </main>
+
+      <section className="px-6 pb-6 text-center text-sm sm:text-base md:text-lg font-semibold text-[var(--text-charcoal)]">
+        {t('newAnnouncement')}
+      </section>
 
       {/* Footer */}
       <footer className="bg-[var(--primary-accent-green)] text-white py-8">
@@ -62,3 +84,5 @@ export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomeP
     </div>
   );
 }
+
+

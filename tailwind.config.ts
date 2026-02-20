@@ -67,6 +67,7 @@ const config: Config = {
         inter: ["var(--font-inter)"],
         montserrat: ["var(--font-montserrat)"],
         caveat: ["var(--font-caveat)"],
+        cinzel: ["var(--font-cinzel)"],
       },
     },
   },
