@@ -27,9 +27,10 @@ When using the `next/image` component, you simply reference the image path relat
 
 The application leverages the Next.js App Router architecture, distinguishing between Server Components and Client Components:
 
-*   **Server Components:** Used for data fetching (e.g., `getEvents` from CSV files) and rendering static or server-rendered UI parts, improving initial page load performance.
-*   **Client Components:** Used for interactive UI elements (e.g., `GoogleMap`, `ImageLightbox`, `Select` dropdowns) and components requiring React Hooks (`useState`, `useEffect`).
+*   **Server Components:** Used for data fetching (e.g., `getEvents` from CSV files) and rendering static or server-rendered UI parts. To support client-side language switching without page reloads, Server Components fetch both Bulgarian and English versions of the data and pass them to Client Components.
+*   **Client Components:** Used for interactive UI elements (e.g., `GoogleMap`, `ImageLightbox`) and for selecting the correct language version of the content from the data provided by the server.
 *   **Content-as-Code:** Event data is managed in local CSV files, providing a straightforward way to update content.
+*   **Bilingual Data Strategy:** Because the site is statically exported, the browser receives all language versions of the dynamic content (events, branches) at once. The `useLanguage` hook then determines which set to display. This ensures instant switching and full SEO compatibility for both languages.
 *   **Modular Component Structure:** The UI is broken down into reusable components (e.g., `EventCard`) for better organization and maintainability.
 
 ## Main Components

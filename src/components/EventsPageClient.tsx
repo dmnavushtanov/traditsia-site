@@ -11,29 +11,31 @@ import { Event } from '@/lib/content';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface EventsPageClientProps {
-  initialEvents: Event[];
+  eventsBg: Event[];
+  eventsEn: Event[];
 }
 
-export default function EventsPageClient({ initialEvents }: EventsPageClientProps) {
-  const { t } = useLanguage();
+export default function EventsPageClient({ eventsBg, eventsEn }: EventsPageClientProps) {
+  const { t, language } = useLanguage();
+  const initialEvents = language === 'en' ? eventsEn : eventsBg;
   const [filteredEvents, setFilteredEvents] = useState<Event[]>(initialEvents);
   const [selectedMonth, setSelectedMonth] = useState<string>('all');
 
   useEffect(() => {
-    const now = new Date();
-    now.setHours(0, 0, 0, 0);
-
-    let currentEvents = initialEvents;
+    const currentInitialEvents = language === 'en' ? eventsEn : eventsBg;
+    
+    let currentEvents = currentInitialEvents;
 
     if (selectedMonth !== 'all') {
-      currentEvents = initialEvents.filter(event => {
+      currentEvents = currentInitialEvents.filter(event => {
+        if (!event.Date) return false;
         const eventDate = new Date(event.Date);
         return (eventDate.getMonth() + 1).toString() === selectedMonth;
       });
     }
 
     setFilteredEvents(currentEvents);
-  }, [initialEvents, selectedMonth]);
+  }, [language, eventsBg, eventsEn, selectedMonth]);
 
   const handleMonthChange = (month: string) => {
     setSelectedMonth(month);

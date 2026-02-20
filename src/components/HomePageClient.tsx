@@ -13,11 +13,14 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH
 import EventCard from './EventCard';
 
 interface HomePageClientProps {
-  recentEvents: Event[];
+  recentEventsBg: Event[];
+  recentEventsEn: Event[];
 }
 
-export default function HomePageClient({ recentEvents }: HomePageClientProps) {
-  const { t } = useLanguage();
+export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomePageClientProps) {
+  const { t, language } = useLanguage();
+  
+  const recentEvents = language === 'en' ? recentEventsEn : recentEventsBg;
   
   return (
     <div className="flex flex-col min-h-screen text-[var(--text-charcoal)]">

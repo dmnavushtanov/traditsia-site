@@ -3,9 +3,10 @@ import { getEvents } from '@/lib/content';
 import EventsPageClient from '@/components/EventsPageClient';
 
 export default async function EventsPage() {
-  const events = await getEvents('bg');
+  const eventsBg = await getEvents('bg');
+  const eventsEn = await getEvents('en');
 
   return (
-    <EventsPageClient initialEvents={events} />
+    <EventsPageClient eventsBg={eventsBg} eventsEn={eventsEn} />
   );
 }

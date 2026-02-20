@@ -11,11 +11,13 @@ import MapAccordion from './MapAccordion';
 const GoogleMap = dynamic(() => import('@/components/GoogleMap'), { ssr: false });
 
 interface EventDetailsClientProps {
-  event: Event;
+  eventBg: Event;
+  eventEn: Event;
 }
 
-export default function EventDetailsClient({ event }: EventDetailsClientProps) {
-  const { t } = useLanguage();
+export default function EventDetailsClient({ eventBg, eventEn }: EventDetailsClientProps) {
+  const { t, language } = useLanguage();
+  const event = language === 'en' ? eventEn : eventBg;
 
   const isValidCoordinates =
     typeof event.Latitude === 'number' && !isNaN(event.Latitude) &&

@@ -10,11 +10,13 @@ import { Phone, Mail, User } from 'lucide-react';
 const GoogleMap = dynamic(() => import('@/components/GoogleMap'), { ssr: false });
 
 interface BranchesClientProps {
-  branches: Branch[];
+  branchesBg: Branch[];
+  branchesEn: Branch[];
 }
 
-export default function BranchesClient({ branches }: BranchesClientProps) {
-  const { t } = useLanguage();
+export default function BranchesClient({ branchesBg, branchesEn }: BranchesClientProps) {
+  const { t, language } = useLanguage();
+  const branches = language === 'en' ? branchesEn : branchesBg;
   const [activeBranch, setActiveBranch] = useState<string | null>(null);
 
   const markers = branches.map(branch => ({
