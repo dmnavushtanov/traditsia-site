@@ -1,0 +1,73 @@
+.theme {
+  --background: 34 30% 92%;
+  --foreground: 20 15% 15%;
+  --card: 34 25% 88%;
+  --card-foreground: 20 15% 15%;
+  --primary: 0 65% 35%;
+  --primary-foreground: 34 30% 95%;
+  --secondary: 150 25% 25%;
+  --secondary-foreground: 34 30% 95%;
+  --muted: 34 20% 85%;
+  --muted-foreground: 20 10% 40%;
+  --accent: 30 60% 45%;
+  --accent-foreground: 34 30% 95%;
+  --border: 30 20% 75%;
+  --np-crimson-light: 0 55% 50%;
+  --np-gold: 38 70% 50%;
+  --np-gold-light: 38 60% 65%;
+  --np-font-heading: var(--font-cinzel), Georgia, serif;
+  --np-font-body: var(--font-inter), "Segoe UI", sans-serif;
+}
+
+.themeRoot {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.paperTexture {
+  position: relative;
+  isolation: isolate;
+}
+
+.paperTexture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ornamentalDivider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ornamentalDivider::before,
+.ornamentalDivider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+.pulseGlow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.goldLightText {
+  color: hsl(var(--np-gold-light));
+  text-shadow: 0 1px 8px hsl(var(--foreground) / 0.35);
+}

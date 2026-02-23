@@ -22,11 +22,11 @@ const isGitHubPages =
 const basePath = envBase ?? (isGitHubPages ? '/traditsia-site' : '')
 const assetPrefix = envBase !== null
   ? envBase
-    ? `${envBase}/`
-    : '/'
+    ? envBase
+    : ''
   : isGitHubPages
-  ? '/traditsia-site/'
-  : '/'
+  ? '/traditsia-site'
+  : ''
 
 const nextConfig: NextConfig = {
   output: 'export',

@@ -36,6 +36,20 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/newPage/App.css",
+    "src/newPage/App.tsx",
+    "src/newPage/index.css",
+    "src/newPage/main.tsx",
+    "src/newPage/tailwind.config.ts",
+    "src/newPage/tsconfig.app.json",
+    "src/newPage/tsconfig.json",
+    "src/newPage/tsconfig.node.json",
+    "src/newPage/vite.config.ts",
+    "src/newPage/vitest.config.ts",
+    "src/newPage/components/NavLink.tsx",
+    "src/newPage/components/ui/**/*",
+    "src/newPage/hooks/use-toast.ts",
+    "src/newPage/pages/NotFound.tsx"
   ]
 }
