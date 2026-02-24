@@ -11,8 +11,9 @@ export const newPageContentEn: NewPageContent = {
     kicker: "Historical Reenactment",
     title: "Courage and Sacrifice",
     subtitle: "April Uprising 1876",
-    description: "Join us in honoring the heroes who dared to dream of a free Bulgaria.",
-    primaryCta: "View Schedule",
+    description:
+      "150 years later, we do not celebrate.\nWe remember.\nAnd we carry the memory forward.",
+    primaryCta: "Program",
     secondaryCta: "Location Map",
   },
   spectacle: {

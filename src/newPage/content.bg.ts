@@ -1,4 +1,4 @@
-import type { NewPageContent } from "./content.types";
+﻿import type { NewPageContent } from "./content.types";
 
 export const newPageContentBg: NewPageContent = {
   metadata: {
@@ -12,8 +12,8 @@ export const newPageContentBg: NewPageContent = {
     title: "Мъжество и саможертва",
     subtitle: "Априлско въстание 1876",
     description:
-      "Присъединете се към нас, за да почетем героите, които дръзнаха да мечтаят за свободна България.",
-    primaryCta: "Виж програмата",
+      "150 години по-късно ние не празнуваме.\nНие помним.\nИ предаваме паметта нататък.",
+    primaryCta: "Програма",
     secondaryCta: "Карта на събитието",
   },
   spectacle: {
@@ -22,7 +22,7 @@ export const newPageContentBg: NewPageContent = {
     title: "Историческа възстановка",
     dateLabel: "1 Май 2026",
     description:
-      "Станете свидетели на драматична възстановка на въстанието: камбанният звън, дал началото на бунта, гръмотевичният тътен на легендарното Черешово топче и ожесточените бойни сцени, променили хода на историята.",
+      "На 1 май 2026 г. станете свидетели на мащабна историческа възстановка, организирана от НД „Традиция“. Героите от април 1876 знаеха, че ще загубят всичко освен честта си. Техният избор промени съдбата на България.",
     timeUnits: {
       days: "Дни",
       hours: "Часа",
@@ -105,3 +105,4 @@ export const newPageContentBg: NewPageContent = {
     copyrightSuffix: "Възстановка на Априлското въстание. Всички права запазени.",
   },
 };
+

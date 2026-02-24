@@ -8,6 +8,17 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ hero }: HeroSectionProps) => {
+  const descriptionLines = hero.description
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const descriptionLineClasses = [
+    "text-base md:text-lg font-bold text-primary-foreground/90",
+    "text-xl md:text-2xl italic font-semibold text-primary-foreground",
+    "text-sm md:text-base font-medium text-primary-foreground/60",
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
@@ -40,9 +51,19 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <p className="text-2xl md:text-3xl [font-family:var(--np-font-heading)] italic text-primary-foreground/80 mb-4">
             {hero.subtitle}
           </p>
-          <p className="text-base md:text-lg text-primary-foreground/70 [font-family:var(--np-font-body)] font-light max-w-2xl mx-auto mb-10">
-            {hero.description}
-          </p>
+          <div className="[font-family:var(--np-font-body)] max-w-2xl mx-auto mb-10 space-y-2 md:space-y-3">
+            {descriptionLines.map((line, index) => (
+              <p
+                key={`${line}-${index}`}
+                className={
+                  descriptionLineClasses[index] ??
+                  "text-base md:text-lg font-medium text-primary-foreground/75"
+                }
+              >
+                {line}
+              </p>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div

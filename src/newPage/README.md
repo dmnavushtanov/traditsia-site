@@ -5,6 +5,7 @@ This module is an isolated standalone page feature inside the Next.js site.
 - Route: `/new-page`
 - Route file: `src/app/new-page/page.tsx`
 - Feature entry: `src/newPage/pages/Index.tsx`
+- Social metadata (title/description/Open Graph for Facebook share): `src/app/new-page/page.tsx`
 
 ## Current Architecture
 
@@ -33,6 +34,8 @@ This module is an isolated standalone page feature inside the Next.js site.
 - Hero and history images are served from `public/` to avoid broken `/_next/static/media/...` URLs in dev/export:
   - `public/newPage/hero-bg.jpg`
   - `public/newPage/reenactment.jpg`
+- Facebook/Open Graph preview image:
+  - `public/assets/images/facebook-preview.jpg`
 - Countdown hydration mismatch is prevented in `SpectacleSection.tsx` by:
   - deterministic first render (`00` values),
   - client update after mount.
