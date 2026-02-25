@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import type { NewPageContent } from "../content.types";
+import heroBackground from "../assets/hero-bg.jpg";
 import styles from "../styles.module.css";
 
 interface HeroSectionProps {
@@ -38,7 +39,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/newPage/hero-bg.jpg"
+          src={heroBackground}
           alt={hero.backgroundAlt}
           fill
           priority

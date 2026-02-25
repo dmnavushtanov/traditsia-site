@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="adding new stuff and refactoring">
+    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="fixing some text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/content.bg.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.bg.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/content.en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.en.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/assets/hero-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/assets/hero-bg.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +59,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\src\newPage\assets" />
       <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\public\assets\images" />
       <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\public\images" />
     </key>
@@ -122,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772023472886</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixing some text">
+      <option name="closed" value="true" />
+      <created>1772031591755</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772031591755</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,7 +147,8 @@
     <MESSAGE value="fixingadding banner 150 aprilsko wyz" />
     <MESSAGE value="adding facebook and changing some text" />
     <MESSAGE value="adding new stuff and refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding new stuff and refactoring" />
+    <MESSAGE value="fixing some text" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing some text" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
