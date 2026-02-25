@@ -28,7 +28,7 @@ const descriptionLineVariants: Variants = {
 };
 
 const HeroSection = ({ hero }: HeroSectionProps) => {
-  const heroBackground = "/newPage/hero-bg.jpg?v=20260225";
+  const heroBackground = "/newPage/hero-bg.png";
   const descriptionLines = hero.description
     .split("\n")
     .map((line) => line.trim())

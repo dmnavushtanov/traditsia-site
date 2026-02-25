@@ -1,6 +1,7 @@
 import EventDetailsClient from '@/components/EventDetailsClient'
 import { getEvents, Event } from '@/lib/content'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const eventsBg = await getEvents('bg')
@@ -40,5 +41,33 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
     return notFound();
   }
 
-  return <EventDetailsClient eventBg={eventBg} eventEn={eventEn} />;
+  const schemaEvent = eventBgMatch ?? eventEnMatch ?? eventBg;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: schemaEvent.Title,
+    startDate: schemaEvent.Date,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: schemaEvent.City,
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "НД Традиция",
+      url: "https://nd-traditsiya.com",
+    },
+  };
+
+  return (
+    <>
+      <Script
+        id="event-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <EventDetailsClient eventBg={eventBg} eventEn={eventEn} />
+    </>
+  );
 }
