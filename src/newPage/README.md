@@ -34,6 +34,9 @@ This module is an isolated standalone page feature inside the Next.js site.
 - Hero and history images are served from `public/` to avoid broken `/_next/static/media/...` URLs in dev/export:
   - `public/newPage/hero-bg.jpg`
   - `public/newPage/reenactment.jpg`
+- Hero component uses:
+  - `src="/newPage/hero-bg.jpg?v=20260225"`
+  - Keep editing `public/newPage/hero-bg.jpg` when you want to change the hero image.
 - Facebook/Open Graph preview image:
   - `public/assets/images/facebook-preview.jpg`
 - Countdown hydration mismatch is prevented in `SpectacleSection.tsx` by:
@@ -65,6 +68,7 @@ Open:
 If you changed config/assets and still see stale errors, clear the build cache once:
 
 ```powershell
+Stop-Process -Name node -Force
 Remove-Item -Recurse -Force .next
 ```
 

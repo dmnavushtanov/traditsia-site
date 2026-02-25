@@ -1,7 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import type { NewPageContent } from "../content.types";
-import heroBackground from "../assets/hero-bg.jpg";
 import styles from "../styles.module.css";
 
 interface HeroSectionProps {
@@ -29,6 +28,7 @@ const descriptionLineVariants: Variants = {
 };
 
 const HeroSection = ({ hero }: HeroSectionProps) => {
+  const heroBackground = "/newPage/hero-bg.jpg?v=20260225";
   const descriptionLines = hero.description
     .split("\n")
     .map((line) => line.trim())

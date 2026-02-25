@@ -148,3 +148,28 @@ npm run start
 The `build` script first runs linting and a TypeScript check so you can see all issues in one run. You can also execute `npm run check` separately to only perform the type check.
 
 Alternatively, `npm run export` generates a static `out/` directory that can be hosted on any static file server.
+
+## Recent Updates (SEO + Indexing)
+
+- Added global SEO metadata in `src/app/layout.tsx`:
+  - `metadataBase: https://nd-traditsiya.com`
+  - default + templated title
+  - description + keywords
+  - Open Graph (`bg_BG`)
+  - canonical URL
+- Added Next.js metadata routes:
+  - `src/app/sitemap.ts` -> `/sitemap.xml`
+  - `src/app/robots.ts` -> `/robots.txt`
+- Because this project uses `output: "export"`, both metadata routes include:
+  - `export const dynamic = "force-static"`
+  - This is required so static export works without route build errors.
+
+## Dev Cache Recovery (Windows)
+
+If you see runtime errors like `Cannot find module './447.js'` or `./548.js` from `.next/server/webpack-runtime.js`, reset stale Next.js dev artifacts:
+
+```powershell
+Stop-Process -Name node -Force
+Remove-Item -Recurse -Force .next
+npm run dev
+```
