@@ -1,4 +1,4 @@
-export type VisitorTipId = "dress-code" | "parking" | "food-drink";
+export type VisitorTipId = "dress-code" | "location" | "date-time";
 
 export interface NewPageContent {
   metadata: {

@@ -20,7 +20,7 @@ const Index = () => {
       <SpectacleSection spectacle={content.spectacle} />
       <ProgramSection program={content.program} />
       <HistorySection history={content.history} />
-      <VisitorSection visitor={content.visitor} />
+      <VisitorSection visitor={content.visitor} language={language} />
       <Footer footer={content.footer} />
     </div>
   );

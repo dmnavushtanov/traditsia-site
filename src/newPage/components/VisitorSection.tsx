@@ -1,20 +1,26 @@
 import { motion } from "framer-motion";
-import { Car, Flag, UtensilsCrossed } from "lucide-react";
+import { Clock3, Flag, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import type { Language } from "@/lib/translations";
 import type { NewPageContent, VisitorTipId } from "../content.types";
 
 const tipIcons: Record<VisitorTipId, LucideIcon> = {
   "dress-code": Flag,
-  parking: Car,
-  "food-drink": UtensilsCrossed,
+  location: MapPin,
+  "date-time": Clock3,
 };
 
 interface VisitorSectionProps {
   visitor: NewPageContent["visitor"];
+  language: Language;
 }
 
-const VisitorSection = ({ visitor }: VisitorSectionProps) => {
+const VisitorSection = ({ visitor, language }: VisitorSectionProps) => {
   const tipsGridCols = visitor.tips.length <= 2 ? "md:grid-cols-2" : "md:grid-cols-3";
+  const mapSrc =
+    language === "bg"
+      ? "https://www.google.com/maps?q=%D0%B3%D1%80.%20%D0%9F%D0%B0%D0%BD%D0%B0%D0%B3%D1%8E%D1%80%D0%B8%D1%89%D0%B5%2C%20%D0%BF%D0%BB.%20%E2%80%9E20%20%D0%B0%D0%BF%D1%80%D0%B8%D0%BB%E2%80%9C%20%E2%80%93%20%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D0%B5%D0%BD%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%20%E2%80%9E%D0%90%D0%BF%D1%80%D0%B8%D0%BB%D1%86%D0%B8%E2%80%9C&hl=bg&z=14&output=embed"
+      : "https://www.google.com/maps?q=Panagyurishte,+20+April+Square,+Apriltsi+Memorial+Complex&hl=en&z=14&output=embed";
 
   return (
     <section id="visitor-info" className="py-24 px-6 bg-background">
@@ -68,7 +74,7 @@ const VisitorSection = ({ visitor }: VisitorSectionProps) => {
         >
           <iframe
             title={visitor.mapTitle}
-            src="https://www.google.com/maps?q=Panagyurishte,+Bulgaria&output=embed"
+            src={mapSrc}
             width="100%"
             height="400"
             style={{ border: 0 }}

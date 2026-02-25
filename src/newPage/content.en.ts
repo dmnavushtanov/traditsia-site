@@ -92,9 +92,14 @@ export const newPageContentEn: NewPageContent = {
         text: "As a sign of respect for the heroes' sacrifice, we invite you to bring Bulgarian flags to the event.",
       },
       {
-        id: "parking",
-        title: "Parking",
-        text: "Free parking available at the designated areas near the event grounds.",
+        id: "location",
+        title: "Location",
+        text: "Panagyurishte, \"20 April\" Square - \"Apriltsi\" Memorial Complex.",
+      },
+      {
+        id: "date-time",
+        title: "Time and Date:",
+        text: "15:00, 1 May 2026.",
       },
     ],
   },
