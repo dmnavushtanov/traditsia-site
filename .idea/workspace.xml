@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="adding facebook and changing some text">
+    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="adding new stuff and refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/new-page/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/new-page/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/components/SpectacleSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/SpectacleSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newPage/components/VisitorSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/VisitorSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newPage/content.bg.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.bg.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newPage/content.en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.en.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,23 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Iva/Desktop/PRJ/traditsia-site",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Iva/Desktop/PRJ/traditsia-site&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\public\assets\images" />
@@ -115,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771961473951</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding new stuff and refactoring">
+      <option name="closed" value="true" />
+      <created>1772023472886</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772023472886</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,7 +141,8 @@
     <MESSAGE value="fixing error" />
     <MESSAGE value="fixingadding banner 150 aprilsko wyz" />
     <MESSAGE value="adding facebook and changing some text" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding facebook and changing some text" />
+    <MESSAGE value="adding new stuff and refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding new stuff and refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

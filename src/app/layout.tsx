@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter, Montserrat, Caveat, Cinzel } from 'next/font/google'
+import { Inter, Montserrat, Caveat, Cinzel, EB_Garamond } from 'next/font/google'
 import type { Metadata } from 'next'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import TranslatableNavigation from '@/components/TranslatableNavigation'
@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' })
 const cinzel = Cinzel({ subsets: ['latin'], variable: '--font-cinzel' })
+const ebGaramond = EB_Garamond({ subsets: ['latin', 'cyrillic'], variable: '--font-eb-garamond' })
 
 export const metadata: Metadata = {
   title: 'НД "Традиция"',
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} ${montserrat.variable} ${inter.variable} ${caveat.variable} ${cinzel.variable} bg-background text-foreground`}>
+      <body className={`${inter.className} ${montserrat.variable} ${inter.variable} ${caveat.variable} ${cinzel.variable} ${ebGaramond.variable} bg-background text-foreground`}>
         <LanguageProvider>
           <TranslatableNavigation />
           {children}

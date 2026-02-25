@@ -32,8 +32,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
-  const [firstLine = "", secondLine = "", thirdLine = "", ...extraLines] =
-    descriptionLines;
+  const [firstLine = "", secondLine = ""] = descriptionLines;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -46,99 +45,67 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/62 to-foreground/74" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <p className={`${styles.goldLightText} text-gold-light tracking-[0.3em] uppercase text-sm md:text-base mb-4 [font-family:var(--np-font-body)] font-light`}>
+          <p className="[font-family:var(--np-font-heading)] text-[#F2EFE8] text-[clamp(1.6rem,2.56vw,2.8rem)] leading-tight mb-6 md:mb-10">
             {hero.kicker}
           </p>
-          <h1 className="[font-family:var(--np-font-heading)] text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-tight mb-6">
-            {hero.title}
-          </h1>
-          <div className={`${styles.ornamentalDivider} max-w-md mx-auto mb-6`}>
-            <span className="text-[hsl(var(--np-gold))] text-2xl">*</span>
-          </div>
-          <p className="text-2xl md:text-3xl [font-family:var(--np-font-heading)] italic text-primary-foreground/80 mb-4">
-            {hero.subtitle}
-          </p>
+          <div className={`${styles.memorialDivider} max-w-md mx-auto mb-8 md:mb-12`} />
           <motion.div
-            className="[font-family:var(--np-font-body)] max-w-3xl mx-auto mb-10"
+            className="[font-family:var(--np-font-body)] max-w-3xl mx-auto mb-16 md:mb-24"
             variants={descriptionContainerVariants}
             initial="hidden"
             animate="show"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 items-end">
-              <motion.p
-                variants={descriptionLineVariants}
-                className="text-lg md:text-xl font-bold text-primary-foreground/90 text-center md:text-left"
-              >
-                {firstLine}
-              </motion.p>
-              <motion.p
-                variants={descriptionLineVariants}
-                className="[font-family:var(--np-font-heading)] text-4xl sm:text-5xl md:text-6xl italic font-bold text-primary-foreground leading-none text-center md:text-right"
-              >
-                {secondLine}
-              </motion.p>
-            </div>
             <motion.p
               variants={descriptionLineVariants}
-              className="mt-3 md:mt-4 text-base md:text-lg [font-family:var(--np-font-heading)] font-semibold tracking-[0.04em] text-primary-foreground drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] text-center"
+              className="text-[clamp(1.08rem,1.76vw,1.8rem)] font-light tracking-[0.02em] text-[#F2EFE8]/85 text-center"
             >
-              {thirdLine}
+              {firstLine}
             </motion.p>
-            {extraLines.length > 0 && (
-              <div className="mt-2 space-y-1">
-                {extraLines.map((line, index) => (
-                  <motion.p
-                    key={`${line}-${index}`}
-                    variants={descriptionLineVariants}
-                    className="text-sm md:text-base font-medium text-primary-foreground/70 text-center"
-                  >
-                    {line}
-                  </motion.p>
-                ))}
-              </div>
-            )}
+            <motion.p
+              variants={descriptionLineVariants}
+              className="mt-3 md:mt-4 text-[clamp(1.08rem,1.76vw,1.8rem)] font-light tracking-[0.02em] text-[#F2EFE8]/85 text-center"
+            >
+              {secondLine}
+            </motion.p>
+          </motion.div>
+
+          <div className={`${styles.memorialDivider} max-w-xl mx-auto mb-10 md:mb-16`} />
+          <h1 className="[font-family:var(--np-font-heading)] text-[clamp(2.88rem,6.56vw,8rem)] font-semibold uppercase tracking-[0.11em] text-[#F2EFE8] leading-[0.95] mb-12 md:mb-20 drop-shadow-[0_8px_30px_rgba(0,0,0,0.48)]">
+            {hero.title}
+          </h1>
+          <p className="[font-family:var(--np-font-heading)] text-[clamp(1.6rem,3.04vw,3.36rem)] italic font-normal tracking-[0.04em] text-[#EDE7D9]">
+            {hero.subtitle}
+          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-8 md:mt-10 -translate-y-[28%] mb-8 md:mb-12 flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a
+              href="#schedule"
+              className={`${styles.pulseGlow} px-8 py-3 bg-primary text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded border border-[hsl(var(--np-crimson-light)/0.3)] hover:bg-[hsl(var(--np-crimson-light))] transition-colors`}
+            >
+              {hero.primaryCta}
+            </a>
+            <a
+              href="#visitor-info"
+              className={`${styles.pulseGlow} px-8 py-3 bg-primary text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded border border-[hsl(var(--np-crimson-light)/0.3)] hover:bg-[hsl(var(--np-crimson-light))] transition-colors`}
+            >
+              {hero.secondaryCta}
+            </a>
           </motion.div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <a
-            href="#schedule"
-            className={`${styles.pulseGlow} px-8 py-3 bg-primary text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded border border-[hsl(var(--np-crimson-light)/0.3)] hover:bg-[hsl(var(--np-crimson-light))] transition-colors`}
-          >
-            {hero.primaryCta}
-          </a>
-          <a
-            href="#visitor-info"
-            className={`${styles.pulseGlow} px-8 py-3 bg-primary text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded border border-[hsl(var(--np-crimson-light)/0.3)] hover:bg-[hsl(var(--np-crimson-light))] transition-colors`}
-          >
-            {hero.secondaryCta}
-          </a>
-        </motion.div>
       </div>
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-primary-foreground/40 rounded-full flex items-start justify-center p-1">
-          <div className="w-1.5 h-3 bg-primary-foreground/60 rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 };

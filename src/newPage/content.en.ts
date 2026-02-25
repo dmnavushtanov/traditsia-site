@@ -8,11 +8,11 @@ export const newPageContentEn: NewPageContent = {
   },
   hero: {
     backgroundAlt: "Dramatic painting of the April Uprising of 1876",
-    kicker: "Historical Reenactment",
-    title: "Courage and Sacrifice",
-    subtitle: "April Uprising 1876",
+    kicker: "April Uprising 1876",
+    title: "WE REMEMBER.",
+    subtitle: "And we carry the memory forward.",
     description:
-      "150 years later, we do not celebrate.\nWe remember.\nAnd we carry the memory forward.",
+      "150 years later\nwe do not celebrate.",
     primaryCta: "Program",
     secondaryCta: "Location Map",
   },
