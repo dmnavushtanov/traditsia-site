@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import type { NewPageContent } from "../content.types";
 import styles from "../styles.module.css";
@@ -7,17 +7,33 @@ interface HeroSectionProps {
   hero: NewPageContent["hero"];
 }
 
+const descriptionContainerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const descriptionLineVariants: Variants = {
+  hidden: { opacity: 0, y: 8, filter: "blur(2px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.35, ease: "easeOut" },
+  },
+};
+
 const HeroSection = ({ hero }: HeroSectionProps) => {
   const descriptionLines = hero.description
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
-
-  const descriptionLineClasses = [
-    "text-base md:text-lg font-bold text-primary-foreground/90",
-    "text-xl md:text-2xl italic font-semibold text-primary-foreground",
-    "text-sm md:text-base font-medium text-primary-foreground/60",
-  ];
+  const [firstLine = "", secondLine = "", thirdLine = "", ...extraLines] =
+    descriptionLines;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -51,19 +67,46 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <p className="text-2xl md:text-3xl [font-family:var(--np-font-heading)] italic text-primary-foreground/80 mb-4">
             {hero.subtitle}
           </p>
-          <div className="[font-family:var(--np-font-body)] max-w-2xl mx-auto mb-10 space-y-2 md:space-y-3">
-            {descriptionLines.map((line, index) => (
-              <p
-                key={`${line}-${index}`}
-                className={
-                  descriptionLineClasses[index] ??
-                  "text-base md:text-lg font-medium text-primary-foreground/75"
-                }
+          <motion.div
+            className="[font-family:var(--np-font-body)] max-w-3xl mx-auto mb-10"
+            variants={descriptionContainerVariants}
+            initial="hidden"
+            animate="show"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 items-end">
+              <motion.p
+                variants={descriptionLineVariants}
+                className="text-lg md:text-xl font-bold text-primary-foreground/90 text-center md:text-left"
               >
-                {line}
-              </p>
-            ))}
-          </div>
+                {firstLine}
+              </motion.p>
+              <motion.p
+                variants={descriptionLineVariants}
+                className="[font-family:var(--np-font-heading)] text-4xl sm:text-5xl md:text-6xl italic font-bold text-primary-foreground leading-none text-center md:text-right"
+              >
+                {secondLine}
+              </motion.p>
+            </div>
+            <motion.p
+              variants={descriptionLineVariants}
+              className="mt-3 md:mt-4 text-base md:text-lg [font-family:var(--np-font-heading)] font-semibold tracking-[0.04em] text-primary-foreground drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] text-center"
+            >
+              {thirdLine}
+            </motion.p>
+            {extraLines.length > 0 && (
+              <div className="mt-2 space-y-1">
+                {extraLines.map((line, index) => (
+                  <motion.p
+                    key={`${line}-${index}`}
+                    variants={descriptionLineVariants}
+                    className="text-sm md:text-base font-medium text-primary-foreground/70 text-center"
+                  >
+                    {line}
+                  </motion.p>
+                ))}
+              </div>
+            )}
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -80,7 +123,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           </a>
           <a
             href="#visitor-info"
-            className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded hover:bg-primary-foreground/10 transition-colors"
+            className={`${styles.pulseGlow} px-8 py-3 bg-primary text-primary-foreground [font-family:var(--np-font-body)] font-semibold tracking-wide uppercase text-sm rounded border border-[hsl(var(--np-crimson-light)/0.3)] hover:bg-[hsl(var(--np-crimson-light))] transition-colors`}
           >
             {hero.secondaryCta}
           </a>

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     url: "https://nd-traditsiya.com/new-page/",
     title: "Мъжество и саможертва: 150 години Априлско въстание",
     description:
-      "Станете свидетели на живата история: Черешовото топче, битките и героите на 1876-та. Програма, карта и детайли за събитието.",
+      "Станете свидетели на мащабна историческа възстановка. Програма, карта и детайли за събитието.",
     images: [
       {
-        url: "https://nd-traditsiya.com/assets/images/facebook-preview.jpg",
+        url: "https://nd-traditsiya.com/assets/images/facebook-preview.png",
       },
     ],
   },

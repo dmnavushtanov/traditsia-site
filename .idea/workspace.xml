@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="" />
+    <list default="true" id="398938f7-715e-4a83-82ca-37f091d794ce" name="Changes" comment="adding facebook and changing some text">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/new-page/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/new-page/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/HeroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/components/SpectacleSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/SpectacleSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/components/VisitorSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/components/VisitorSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/content.bg.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.bg.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newPage/content.en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newPage/content.en.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +21,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dmnavushtanov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dmnavushtanov/traditsia-site.git&quot;,
+    &quot;accountId&quot;: &quot;53266876-e41e-4e3f-91da-4c152c1c61e8&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="39tn0kEnSDSmMctBzKFTMSKbH2n" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,16 +54,24 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Iva/Desktop/PRJ/traditsia-site",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\public\assets\images" />
+      <recent name="C:\Users\Iva\Desktop\PRJ\traditsia-site\public\images" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -55,6 +83,61 @@
       <option name="presentableId" value="Default" />
       <updated>1771524013928</updated>
     </task>
+    <task id="LOCAL-00001" summary="making it to work with english">
+      <option name="closed" value="true" />
+      <created>1771576804791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1771576804791</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixing error">
+      <option name="closed" value="true" />
+      <created>1771577213671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771577213671</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixingadding banner 150 aprilsko wyz">
+      <option name="closed" value="true" />
+      <created>1771584742221</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771584742221</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding facebook and changing some text">
+      <option name="closed" value="true" />
+      <created>1771961473951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771961473951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="making it to work with english" />
+    <MESSAGE value="fixing error" />
+    <MESSAGE value="fixingadding banner 150 aprilsko wyz" />
+    <MESSAGE value="adding facebook and changing some text" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding facebook and changing some text" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

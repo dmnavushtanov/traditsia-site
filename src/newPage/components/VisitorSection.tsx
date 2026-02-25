@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Car, Shirt, UtensilsCrossed } from "lucide-react";
+import { Car, Flag, UtensilsCrossed } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { NewPageContent, VisitorTipId } from "../content.types";
 
 const tipIcons: Record<VisitorTipId, LucideIcon> = {
-  "dress-code": Shirt,
+  "dress-code": Flag,
   parking: Car,
   "food-drink": UtensilsCrossed,
 };

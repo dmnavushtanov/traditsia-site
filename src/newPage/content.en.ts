@@ -88,8 +88,8 @@ export const newPageContentEn: NewPageContent = {
     tips: [
       {
         id: "dress-code",
-        title: "Dress Code",
-        text: "Traditional Bulgarian wear is encouraged. Bring a Bulgarian flag to show your support.",
+        title: "In Memory of the Heroes",
+        text: "As a sign of respect for the heroes' sacrifice, we invite you to bring Bulgarian flags to the event.",
       },
       {
         id: "parking",

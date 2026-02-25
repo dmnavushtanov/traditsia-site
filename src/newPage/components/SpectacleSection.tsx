@@ -58,7 +58,7 @@ const SpectacleSection = ({ spectacle }: SpectacleSectionProps) => {
           <p className="text-primary tracking-[0.25em] uppercase text-sm [font-family:var(--np-font-body)] font-semibold mb-3">
             {spectacle.kicker}
           </p>
-          <h2 className="[font-family:var(--np-font-heading)] text-[3.6rem] md:text-[5.4rem] font-bold text-foreground mb-6 leading-[1.05]">
+          <h2 className="[font-family:var(--np-font-heading)] text-4xl sm:text-5xl md:text-[5.4rem] font-bold text-foreground mb-6 leading-[1.08] break-words">
             {spectacle.title}
           </h2>
           <p className="text-accent [font-family:var(--np-font-heading)] mb-10">
