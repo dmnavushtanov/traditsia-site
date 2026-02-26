@@ -38,16 +38,22 @@ export const newPageContentEn: NewPageContent = {
         day: "Day 1",
         items: [
           {
-            time: "16:00",
-            title: "Courage and Sacrifice - Historical Reenactment",
+            time: "10:00",
+            title: "Liturgical Procession",
             description:
-              "Battle scenes and theatrical performance depicting the heroic uprising against Ottoman rule.",
+              "Liturgical procession from the History Museum to 20 April Square with the participation of Regional Club Traditsia Panagyurishte.",
           },
           {
-            time: "19:00",
-            title: "Memorial Service and Torchlight Procession",
+            time: "15:00",
+            title: 'Military-historical reenactment "Courage and Sacrifice - Panagyurishte 1876"',
             description:
-              "A solemn tribute to the fallen, followed by a moving procession through the historic streets.",
+              'The historical reenactment "Courage and Sacrifice" takes the audience back to the turbulent days of April 1876, when Panagyurishte proclaimed freedom and embarked on the difficult path of the uprising. The most dramatic moments of its suppression come to life - the rebels\' last stand and the self-sacrifice of men, women, children, and elders in the name of freedom.',
+          },
+          {
+            time: "20:30",
+            title: "National Ceremonial Roll Call",
+            description:
+              "A tribute to the heroes who gave their lives for Bulgaria's freedom, with a ceremonial military roll call featuring the National Guards Unit.",
           },
         ],
       },
@@ -55,16 +61,16 @@ export const newPageContentEn: NewPageContent = {
         day: "Day 2",
         items: [
           {
-            time: "10:00",
-            title: "Traditional Crafts Fair and Historical Exhibition",
+            time: "10:00 - 17:00",
+            title: 'Military History Festival "Living History" - Oborishte Historical Site',
             description:
-              "Explore authentic 19th-century crafts, weaponry, and artifacts from the era of the uprising.",
+              "Four themed zones with craft reenactments and attractions presenting a medieval camp from the period of the Second Bulgarian Empire (12th-14th century), the National Revival era and the activity of the 4th Revolutionary District (18th-19th century), the period of the Liberation Wars - the Balkan War and the First World War (1912-1918), as well as a soldiers' garrison from the time of the Second World War (1939-1945).",
           },
           {
-            time: "13:00",
-            title: "Folk Music and Traditional Bulgarian Lunch",
+            time: "20:00",
+            title: 'Multigenre Festive Spectacle "Freedom Does Not Fall Silent"',
             description:
-              "Enjoy traditional Bulgarian cuisine accompanied by live folk music performances.",
+              "Panagyurishte, 20 April Square.",
           },
         ],
       },
