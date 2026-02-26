@@ -45,7 +45,11 @@ export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomeP
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-6">
+        <Link
+          href="/april-1876"
+          aria-label="150 години Априлско въстание (1876~2026)"
+          className="absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-6"
+        >
           <div className="text-left text-[clamp(12px,2.2vw,36px)] leading-tight text-[var(--text-charcoal)] font-cinzel whitespace-nowrap pr-3">
             <span className="font-extrabold text-[1.3em] sm:text-[1.5em]">150</span>
             <span className="font-semibold"> години Априлско въстание (1876~2026)</span>
@@ -58,7 +62,7 @@ export default function HomePageClient({ recentEventsBg, recentEventsEn }: HomeP
             className="relative w-[27vw] max-w-[240px] -translate-y-[10%] rotate-[30deg] shrink-0 -translate-x-[10%] sm:translate-x-0"
             sizes="(max-width: 640px) 30vw, 240px"
           />
-        </div>
+        </Link>
       </section>
 
       {/* Upcoming Events */}

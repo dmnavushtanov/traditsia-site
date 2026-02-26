@@ -35,7 +35,7 @@ export const newPageContentBg: NewPageContent = {
     title: "Пълна програма",
     days: [
       {
-        day: "Ден 1",
+        day: "1 Май",
         items: [
           {
             time: "10:00",
@@ -58,7 +58,7 @@ export const newPageContentBg: NewPageContent = {
         ],
       },
       {
-        day: "Ден 2",
+        day: "2 Май",
         items: [
           {
             time: "10:00 - 17:00",

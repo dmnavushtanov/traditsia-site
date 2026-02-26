@@ -2,10 +2,10 @@
 
 This module is an isolated standalone page feature inside the Next.js site.
 
-- Route: `/new-page`
-- Route file: `src/app/new-page/page.tsx`
+- Route: `/april-1876`
+- Route file: `src/app/april-1876/page.tsx`
 - Feature entry: `src/newPage/pages/Index.tsx`
-- Social metadata (title/description/Open Graph for Facebook share): `src/app/new-page/page.tsx`
+- Social metadata (title/description/Open Graph for Facebook share): `src/app/april-1876/page.tsx`
 
 ## Current Architecture
 
@@ -63,7 +63,7 @@ npm run dev
 
 Open:
 
-- `http://localhost:3000/new-page/`
+- `http://localhost:3000/april-1876/`
 
 If you changed config/assets and still see stale errors, clear the build cache once:
 
